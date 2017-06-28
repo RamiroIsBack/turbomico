@@ -9,8 +9,22 @@ require('dotenv').config()
 
 var routes = require('./routes/index')
 var api = require('./routes/api')
+//               NO VA
+//meto esto a ver si va lo del HistoryApiFallback
+/////////////////////////////////////////////////////
+/*var webpack = require('webpack'),
+  WebpackDevServer = require('webpack-dev-server'),
+  config = require('./webpack.config')
 
+var server = new WebpackDevServer(webpack(config), {
+  publicPath: config.output.publicPath,
+})
 
+// Important part. Send down index.html for all requests
+server.use('/', function(req, res) {
+  res.sendFile(path.join(__dirname+'/index.html'))
+})*/
+////////////////////////////////////////////////////////////
 var app = express()
 
 // view engine setup

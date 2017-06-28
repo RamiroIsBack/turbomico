@@ -1,24 +1,26 @@
 import React, { Component } from 'react'
 import { Foto } from '../presentational'
+import actions from '../../actions'
+import { connect } from 'react-redux'
 
-export default class FotoContainer extends Component {
+class FotoContainer extends Component {
   constructor(args) {
     super()
     //hardcoding a list of fotos until i get the info from API
     this.state = {
       list:[
-        {name: 'agendas.jpg', tipo: 'libretas', disponibilidad:'proximamente', },
-        {name: 'bolso.jpg', tipo: 'bolsos', disponibilidad:'si', },
-        {name: 'cartera.jpg', tipo: 'monederos', disponibilidad:'si', },
-        {name: 'falda-1.jpg', tipo: 'faldas', disponibilidad:'proximamente', },
-        {name: 'falda-3.jpg', tipo: 'faldas', disponibilidad:'si', },
-        {name: 'falda-5.jpg', tipo: 'faldas', disponibilidad:'si', },
-        {name: 'falda-4.jpg', tipo: 'faldas', disponibilidad:'si', },
-        {name: 'libreta-1.png', tipo: 'libretas', disponibilidad:'si', },
-        {name: 'libretas-5.png', tipo: 'libretas', disponibilidad:'si', },
-        {name: 'libretas-8.png', tipo: 'libretas', disponibilidad:'si', },
-        {name: 'blog-2.jpg', disponibilidad:'si', },
-        {name: 'blog-1.jpg', disponibilidad:'no', }
+        {name: 'agendas.jpg', tipo: 'libretas', disponibilidad:'proximamente',precio : 50, unidades: 1,},
+        {name: 'bolso.jpg', tipo: 'bolsos', disponibilidad:'si', precio : 50, materiales: 'piel de cabra', unidades: 1, },
+        {name: 'cartera.jpg', tipo: 'monederos', disponibilidad:'si',precio : 20, unidades: 1, },
+        {name: 'falda-1.jpg', tipo: 'faldas', disponibilidad:'proximamente', precio : 70, unidades: 1, },
+        {name: 'falda-3.jpg', tipo: 'faldas', disponibilidad:'si', precio : 75, unidades: 1, },
+        {name: 'falda-5.jpg', tipo: 'faldas', disponibilidad:'si', precio : 45, unidades: 1, },
+        {name: 'falda-4.jpg', tipo: 'faldas', disponibilidad:'si', precio : 45, unidades: 1, },
+        {name: 'libreta-1.png', tipo: 'libretas', disponibilidad:'si', precio : 30, unidades: 1, },
+        {name: 'libretas-5.png', tipo: 'libretas', disponibilidad:'si', precio : 30, unidades: 1, },
+        {name: 'libretas-8.png', tipo: 'libretas', disponibilidad:'si', precio : 35, unidades: 1, },
+        {name: 'blog-2.jpg', disponibilidad:'si', precio : 500, unidades: 1, },
+        {name: 'blog-1.jpg', disponibilidad:'no', precio : 500, unidades: 1, }
 
 
       ]
@@ -38,8 +40,19 @@ export default class FotoContainer extends Component {
     }
     return sorted
   }
-  handleClick(info){
-    console.log ('caca '+ JSON.stringify(info))
+  selectFoto(foto){
+    console.log ('caca '+ JSON.stringify(foto))
+    //this fires an action down below in this
+    this.props.selectFoto(foto)
+    //esto he encontrado x ahi para hacer route
+    //programatically
+    //https://github.com/ReactTraining/react-router/issues/4220
+    //const { router } = this.context
+    //router.transitionTo(path="/Productos")
+
+    //another thing I saw
+    //this.context.router.push(this.props.myroute)
+
   }
 
   render() {
@@ -47,29 +60,35 @@ export default class FotoContainer extends Component {
     //uso esta let para
     let g = 10000
     var listItem ={}
-    var totalList = []
+
     var sorted = this.sortDlist()
+    var totalList = []
     let size = Object.keys(sorted).length
     //console.log ('caca '+ JSON.stringify(sorted))
     //console.log ('caca '+ size)
-    for (var key in sorted) {
-      if (sorted.hasOwnProperty(key)) {
+    for (var tipo in sorted) {
+      if (sorted.hasOwnProperty(tipo)) {
 
-        listItem = sorted[key].map((foto,i)=>{
+        listItem = sorted[tipo].map((foto,i)=>{
           return(
-            <div key ={i}><Foto propiedades ={foto} whenClicked={this.handleClick.bind(this)}/></div>
+            <div key ={i}>
+              <Foto propiedades ={foto} whenClicked={this.selectFoto.bind(this)}/>
+            </div>
           )
         })
       }
-      if (key == 'undefined'){ key = 'varios'}
+      if (tipo == 'undefined'){ tipo = 'varios'}
       totalList.push (
-        <div class = 'container-fluid col-xs-12 col-sm-12 col-md-12 col-lg-12' id ={key} key = {g}>
-          <div class = 'col-xs-6 col-sm-4 col-md-3 col-lg-3'>
-            <h2>{key}</h2>
+        <div class = 'container-fluid col-xs-12 col-sm-12 col-md-12 col-lg-12' id ={tipo} key = {g}>
+          <div class = ' text-center col-xs-6 col-sm-4 col-md-3 col-lg-3'>
+            <ul class="list-inline">
+              <li><h6 class='glyphicon glyphicon-scissors'/></li>
+              <li><h3> {tipo}</h3></li>
+            </ul>
           </div>
           <div class = 'col-xs-6 col-sm-8 col-md-9 col-lg-9'>
-            <p>Aqui digo algo sobre l@s {key} que ya meteremos desde la rest API en su momento</p>
-            <p>Incluso puede que diga 2 p'arrafos sobre l@s {key}</p>
+            <p>Aqui digo algo sobre l@s {tipo} que ya meteremos desde la rest API en su momento</p>
+            <p class = 'text-muted'>Incluso puede que diga 2 p'arrafos sobre l@s {tipo}</p>
           </div>
         </div>
       )
@@ -90,3 +109,14 @@ export default class FotoContainer extends Component {
     )
   }
 }
+
+const dispatchToProps = (dispatch) =>{
+
+  return{
+
+    selectFoto: (foto) =>dispatch(actions.selectedFoto(foto))
+  }
+}
+//null at d first argument is cos i'm not registering
+//for listening d store, only dispatching actions
+export default connect (null,dispatchToProps)(FotoContainer)

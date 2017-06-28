@@ -1,15 +1,33 @@
 import feria from '../../../assets/images/feria-1.jpg'
+import telaBack from '../../../assets/images/drone-1.jpg'
 import taller from '../../../assets/images/foto-taller-1.jpg'
 export default {
-  // the margin top here at universal is for the navbar
+  // the margin top here at universal.containerDiv is for the navbar
   universal:{
-    marginTop:20,
+    containerDiv:{
+      marginTop:'60px',
+    },
+    backgroundDiv:{
+      //si pones fixed ocupa toda la pantalla pero no se mueve
+      //no hace ni scroll , para una pantalla 'unica esta way
+      position:'fixed',
+      padding:0,
+      margin:0,
+
+      top:0,
+      left:0,
+
+      width: '100%' ,
+      height: '100%' ,
+      backgroundImage: 'url(' + telaBack + ')',
+    },
 
   },
   home:{
     navlinkBtn:{
       padding: '0px',
-      borderRadius:'15px'
+      border: 'none',
+      borderRadius:'10px'
     },
     imageContainerFeria:{
       backgroundPosition: 'center',
@@ -17,7 +35,7 @@ export default {
       backgroundRepeat: 'no-repeat',
       backgroundImage: 'url(' + feria + ')',
       height: '500px',
-      borderRadius:'15px'
+      borderRadius:'10px'
 
     },
     imageContainerDesign:{
@@ -26,7 +44,7 @@ export default {
       backgroundRepeat: 'no-repeat',
       backgroundImage: 'url(' + taller + ')',
       height: '500px',
-      borderRadius:'15px'
+      borderRadius:'10px'
 
     }
   },

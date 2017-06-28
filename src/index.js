@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom'
 
 import store from './stores'
 import { Provider } from 'react-redux'
-import {Home,Alba,Carro,Diseños,Ferias,Contacto,Login} from './components/layout'
+import {Home,Alba,Carro,Diseños,Ferias,Contacto,Login,Productos} from './components/layout'
 import {NavbarMicoFront} from './components/presentational'
 
 import {
   BrowserRouter as Router,
   Route,
-  Link
+  Link,
 } from 'react-router-dom'
 
 /* The Elements components is a summary of basic presentation componets
@@ -33,6 +33,7 @@ class Turbomico extends Component {
               <Route path="/Contacto" component={Contacto}/>
               <Route path="/Ferias" component={Ferias}/>
               <Route path="/Alba" component={Alba}/>
+              <Route path="/Productos" component={Productos}/>
             </div>
           </div>
         </Router>

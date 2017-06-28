@@ -11,8 +11,15 @@ module.exports = {
   },
   output: {
     path: __dirname+'/dist',
+
     filename: 'bundle/[name].js',
     sourceMapFilename: 'bundle/[name].map'
+  },
+  //*************NO VA****************
+  //esto del history... hace q todas las llamdas a paginas /about /feria al server acaben en el index ppal d entrada que es lo 'unico' q tiene llamada al server y desde ahi se redirijan con el router del fronend (para el futuro mirar usar isomorphic)
+  //el public path tiene q ser igual q el index del history...
+  devServer: {
+    historyApiFallback: true
   },
   devtool: '#source-map',
   plugins: process.env.NODE_ENV === 'production' ? [
@@ -38,6 +45,7 @@ module.exports = {
       chunks: chunks
     })
   ],
+
   module: {
     loaders: [
       {

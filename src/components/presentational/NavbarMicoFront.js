@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import { NavLink} from 'react-router-dom'
+import {connect} from 'react-redux'
 import style from './styles'
 const logo = require('../../../assets/images/nano-oval.png')
-export default class Nav extends Component {
+
+class NavbarMicoFront extends Component {
   constructor() {
     super()
     this.state = {
@@ -29,11 +31,11 @@ export default class Nav extends Component {
       <nav class='navbar navbar-inverse navbar-fixed-top sticky' role='navigation' style= {style.navbar.container}>
         <div class='container-fluid'>
 
-          <ul class = 'nav nav-pills navbar-right fixed-top hide-while-loading'
-            style = {style.navbar.comprarButtonStyle}>
-            <li><NavLink to='/Carro' type='button' class='btn btn-success navbar-btn'>
+          <ul class = 'nav nav-pills navbar-right fixed-top hide-while-loading' style = {style.navbar.comprarButtonContainer}>
+            <li><NavLink to='/Carro' type='button' class='btn btn-success navbar-btn' style = {style.navbar.comprarButtonStyle}>
               <span class='glyphicon glyphicon-shopping-cart'>
               </span>
+              <span>({this.props.countCart.numProducts})</span>
             </NavLink></li>
           </ul>
 
@@ -74,3 +76,14 @@ export default class Nav extends Component {
     )
   }
 }
+const stateToProps = (state) => {
+  return{
+    // state is d store in this case for convenction
+    // cojo el producto d state(store) y lo paso a props xa cogerlo
+    //en state.blabla dices de que reducer quieres info
+    //y tu le asignas una key q quieras
+    countCart:state.carro
+  }
+}
+//                                   ****
+export default connect (stateToProps,null)(NavbarMicoFront)

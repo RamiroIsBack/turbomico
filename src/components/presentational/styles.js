@@ -2,12 +2,38 @@ export default {
   // the margin top here at universal is for the navbar
   universal:{
     marginTop:20,
+  },
+  carroProduct : {
+    texto:{
+      //fontFamily: 'monospace',
+      //fontWeight: 'bold',
+      fontSize: '20px',
+    },
+    btnPedido:{
+      textAlign :'center',
+      fontSize: '13px',
+      fontWeight: 'bold',
+      backgroundColor: 'black',
+      width : '100%',
+      marginRight: '5px',
 
+    },
+
+  },
+  product:{
+    borderRadius:'10px',
   },
   foto:{
     container:{
       display : 'inline-block',
+      padding: '2px',
+      border: 'none',
+      borderRadius:'10px'
+    },
+    panel:{
+      display : 'inline-block',
       padding: '0px',
+      border: '1px solid #2C6549',
       borderRadius:'10px'
     },
     cover: {
@@ -24,9 +50,14 @@ export default {
       background: 'rgba(0,0,0,0.7)'
 
     },
-    comprarButtonStyle :{
+    comprarButtonContainer :{
       float : 'right',
-      marginRight: '15px'
+      marginRight: '15px',
+    },
+    comprarButtonStyle :{
+      backgroundColor: 'black',
+      borderRadius:'15px',
+      border : 'none'
     }
   },
   sidebar:{

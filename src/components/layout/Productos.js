@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-
+import {ProductContainer} from '../containers'
+import style from './styles'
 export default class Productos extends Component {
   constructor(){
     super()
@@ -11,7 +12,11 @@ export default class Productos extends Component {
   }
   render() {
     return (
-      <div>aqui vas a ver todos los productos a comprar</div>
+      <div class='container-fluid' id ='backgroundDiv'>
+        <div class='container-fluid' id ='containerDiv' style ={style.universal.containerDiv}>
+          <ProductContainer/>
+        </div>
+      </div>
     )
   }
 }

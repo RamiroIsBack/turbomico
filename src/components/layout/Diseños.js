@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { FotoContainer } from '../containers'
-
+import style from './styles'
 export default class Diseños extends Component {
   constructor(){
     super()
@@ -12,10 +12,10 @@ export default class Diseños extends Component {
     //console.log ('caca '+ FotoContainer)
 
     return (
-      <div>
-
-        <FotoContainer/>
-
+      <div class='container-fluid' id ='backgroundDiv'>
+        <div class='container-fluid' id ='containerDiv' style ={style.universal.containerDiv}>
+          <FotoContainer/>
+        </div>
       </div>
     )
   }

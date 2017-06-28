@@ -39,7 +39,8 @@
     "stripe": "latest",
     "superagent": "latest",
     "turbo360": "latest",
-    "webpack": "latest"
+    "webpack": "latest",
+    "webpack-dev-server": "^2.5.0"
   },
   "devDependencies": {
     "babel-core": "latest",

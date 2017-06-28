@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import style from './styles'
 export default class Ferias extends Component {
 
   constructor(){
@@ -8,7 +8,11 @@ export default class Ferias extends Component {
   }
   render() {
     return (
-      <div>vamos d feria</div>
+      <div class='container-fluid' id ='backgroundDiv'>
+        <div class='container-fluid' id ='containerDiv' style ={style.universal.containerDiv}>
+          vamos d feria
+        </div>
+      </div>
     )
   }
 }

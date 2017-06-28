@@ -2,9 +2,7 @@ import React, { Component } from 'react'
 import { NavLink} from 'react-router-dom'
 import {Sidebar} from '../presentational'
 import style from './styles'
-// images:
-import feria from '../../../assets/images/feria-1.jpg'
-import taller from '../../../assets/images/foto-taller-1.jpg'
+// images: se cargan como background en styles
 
 //class para cuando quiera ocultar algo x tama;o
 //hidden-xs
