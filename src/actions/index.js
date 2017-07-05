@@ -1,9 +1,22 @@
 import constants from '../constants'
 import { TurboClient } from '../utils'
+import { Firebase } from '../utils'
 
 export default {
 
   //info interesante -> https://github.com/reactjs/redux/issues/291
+
+  //intentando hacer una acion asincrona
+  //Redux Thunk middleware will give it  dispatch as an argument. It will also “swallow” such actions (firebase.getCreaciones does d async action)
+
+  //ALSO
+  //Fortunately, Redux Thunk offers you a way to read the current state of the Redux store. In addition to dispatch, it also passes getState as the second argument to the function you return from your thunk action creator
+  getCreaciones: (params)=>{
+    return dispatch => {
+      return dispatch(Firebase.getCreaciones(params, constants.CREACIONES_RECEIVED))
+    }
+
+  },
   // Another simple pure action creator
   selectedFoto: (foto) => {
     // key 'type' is mandatory after that, u can send whatever

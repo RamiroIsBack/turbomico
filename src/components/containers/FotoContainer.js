@@ -6,40 +6,17 @@ import { connect } from 'react-redux'
 class FotoContainer extends Component {
   constructor(args) {
     super()
-    //hardcoding a list of fotos until i get the info from API
-    this.state = {
-      list:[
-        {name: 'agendas.jpg', tipo: 'libretas', disponibilidad:'proximamente',precio : 50, unidades: 1,},
-        {name: 'bolso.jpg', tipo: 'bolsos', disponibilidad:'si', precio : 50, materiales: 'piel de cabra', unidades: 1, },
-        {name: 'cartera.jpg', tipo: 'monederos', disponibilidad:'si',precio : 20, unidades: 1, },
-        {name: 'falda-1.jpg', tipo: 'faldas', disponibilidad:'proximamente', precio : 70, unidades: 1, },
-        {name: 'falda-3.jpg', tipo: 'faldas', disponibilidad:'si', precio : 75, unidades: 1, },
-        {name: 'falda-5.jpg', tipo: 'faldas', disponibilidad:'si', precio : 45, unidades: 1, },
-        {name: 'falda-4.jpg', tipo: 'faldas', disponibilidad:'si', precio : 45, unidades: 1, },
-        {name: 'libreta-1.png', tipo: 'libretas', disponibilidad:'si', precio : 30, unidades: 1, },
-        {name: 'libretas-5.png', tipo: 'libretas', disponibilidad:'si', precio : 30, unidades: 1, },
-        {name: 'libretas-8.png', tipo: 'libretas', disponibilidad:'si', precio : 35, unidades: 1, },
-        {name: 'blog-2.jpg', disponibilidad:'si', precio : 500, unidades: 1, },
-        {name: 'blog-1.jpg', disponibilidad:'no', precio : 500, unidades: 1, }
 
-
-      ]
-    }
   }
+  //componentWillMount is executed once before the initial rendering occurs.
+  //componentDidMount is executed once after the initial rendering.
   componentDidMount() {
-
-  }
-  sortDlist(){
-    //hago un objeto que contiene las listas segun su tipo
-    var sorted = {}
-    for( var i = 0, max = this.state.list.length; i < max ; i++ ){
-      if( sorted[this.state.list[i].tipo] == undefined ){
-        sorted[this.state.list[i].tipo] = []
-      }
-      sorted[this.state.list[i].tipo].push(this.state.list[i])
+    if (this.props.firebaseCreaciones.CreacionesLoaded == false){
+      //en la accion ya lo pone a true
+      this.props.getCreaciones()
     }
-    return sorted
   }
+
   selectFoto(foto){
     console.log ('caca '+ JSON.stringify(foto))
     //this fires an action down below in this
@@ -61,10 +38,11 @@ class FotoContainer extends Component {
     let g = 10000
     var listItem ={}
 
-    var sorted = this.sortDlist()
+    //var sorted = this.sortDlist()
+    var sorted =this.props.firebaseCreaciones.listaCreaciones
     var totalList = []
-    let size = Object.keys(sorted).length
-    //console.log ('caca '+ JSON.stringify(sorted))
+    //let size = Object.keys(sorted).length
+    console.log ('caca '+ JSON.stringify(sorted))
     //console.log ('caca '+ size)
     for (var tipo in sorted) {
       if (sorted.hasOwnProperty(tipo)) {
@@ -114,9 +92,18 @@ const dispatchToProps = (dispatch) =>{
 
   return{
 
-    selectFoto: (foto) =>dispatch(actions.selectedFoto(foto))
+    selectFoto: (foto) =>dispatch(actions.selectedFoto(foto)),
+    getCreaciones:()=>dispatch(actions.getCreaciones())
   }
 }
-//null at d first argument is cos i'm not registering
-//for listening d store, only dispatching actions
-export default connect (null,dispatchToProps)(FotoContainer)
+const stateToProps = (state) => {
+  return{
+    //en state.blabla dices de que reducer quieres info
+    //y tu le asignas una key q quieras
+    firebaseCreaciones:state.creacion
+  }
+}
+//it would be null at d first argument cos i was not registering
+//for listening d store, only dispatching actions but NOW I DO to get the
+//creaciones from firebase data base
+export default connect (stateToProps,dispatchToProps)(FotoContainer)
