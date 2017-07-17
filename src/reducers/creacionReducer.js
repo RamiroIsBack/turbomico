@@ -4,6 +4,7 @@ var initialState = {
 
   listaCreaciones: [],
   CreacionesLoaded :false ,
+  tipoSectionSelected :'allCreaciones',
 }
 
 export default (state = initialState, action) => {
@@ -12,7 +13,7 @@ export default (state = initialState, action) => {
 
   case constants.CREACIONES_RECEIVED:
   //desde
-    console.log (' from reducer CREACIONES_RECEIVED: ' +JSON.stringify(action.data))
+    //console.log (' from reducer CREACIONES_RECEIVED: ' +JSON.stringify(action.data))
 
     newState['CreacionesLoaded'] = true
 
@@ -25,7 +26,14 @@ export default (state = initialState, action) => {
       }
       sorted[list[i].tipo].push(list[i])
     }
+    console.log('from creacines reducer')
     newState['listaCreaciones'] = sorted
+    return newState
+
+  case constants.MOVETO_CREACION_SECTION:
+    newState['tipoSectionSelected'] = action.data
+    console.log (' from reducer tipoSectionSelected:' +action.data)
+
     return newState
 
   default:
@@ -33,14 +41,3 @@ export default (state = initialState, action) => {
   }
 }
 
-//queria hacer el sort d list aqui pero me da error
-/*case constants.CREACIONES_RECEIVED:
-  //hago un objeto que contiene las listas segun su tipo
-  for( var i = 0, max = action.data.length; i < max ; i++ ){
-    if( newState['listaCreaciones'][action.data[i].tipo] == undefined ){
-      newState['listaCreaciones'][action.data[i].tipo] = []
-    }
-    newState['listaCreaciones'][action.data[i].tipo].push(action.data[i])
-  }
-
-  return newState*/

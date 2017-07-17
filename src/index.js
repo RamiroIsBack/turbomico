@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
-
+import history from './utils/history'
 import store from './stores'
 import { Provider } from 'react-redux'
 import {Home,Alba,Carro,Diseños,Ferias,Contacto,Login,Productos} from './components/layout'
-import {NavbarMicoFront} from './components/presentational'
+import {NavbarMicoFront} from './components/containers'
 
 import {
-  BrowserRouter as Router,
+  Router as Router,
   Route,
   Link,
 } from 'react-router-dom'
@@ -22,7 +22,7 @@ class Turbomico extends Component {
     return (
 
       <Provider store={store.configure(null)}>
-        <Router>
+        <Router history={history}>
           <div>
             <NavbarMicoFront/>
             <div>

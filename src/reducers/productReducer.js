@@ -11,7 +11,7 @@ export default (state = initialState, action) => {
 
   case constants.SELECT_FOTO:
   //desde
-    console.log (' from reducer SELECT_FOTO: ' +JSON.stringify(action.data))
+    //console.log (' from reducer SELECT_FOTO: ' +JSON.stringify(action.data))
     newState['selectedFoto'] = action.data
     return newState
 

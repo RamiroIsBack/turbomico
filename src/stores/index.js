@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware, combineReducers } from 'redux'
 import thunk from 'redux-thunk'
-import { userReducer, productReducer,carroReducer, creacionReducer } from '../reducers'
+import { userReducer, productReducer,carroReducer, creacionReducer, feriaReducer } from '../reducers'
 
 
 var store
@@ -13,6 +13,7 @@ export default {
       product: productReducer,
       carro: carroReducer,
       creacion: creacionReducer,
+      feria: feriaReducer,
     })
 
     if (initialState){

@@ -9,7 +9,6 @@ class CarroContainer extends Component {
     this.state = {
       cartList:[]
     }
-    console.log ('cosntructor de carro')
   }
   componentDidMount() {
     //we'll have to fill d list from API here?
@@ -41,12 +40,12 @@ class CarroContainer extends Component {
     })
     return (
       <div>
-        <div class='container-fluid col-xs-8 col-sm-8 col-md-7 col-lg-6'>
+        <div class='container-fluid col-xs-12 col-sm-8 col-md-7 col-lg-6'>
 
           {productList}
 
         </div>
-        <div class='container-fluid col-xs-4 col-sm-4 col-md-5 col-lg-6'>
+        <div class=' col-xs-12 col-sm-4 col-md-5 col-lg-6'>
           <CarroBuy subTotal = {this.props.productToCart.precioSubTotal}/>
         </div>
       </div>

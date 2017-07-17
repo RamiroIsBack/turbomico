@@ -12,20 +12,44 @@ const database =firebase.database()
 
 const DBferias = database.ref('ferias/')
 const DBcreaciones = database.ref('creaciones/')
-var list = []
+var listCreaciones = []
+var listFerias =[]
 
 const getCreaciones = (params, actionType) => {
   return dispatch => DBcreaciones.once('value')
     .then(snapshot => {
       snapshot.forEach(function(childSnapshot){
         const valor = childSnapshot.val()
-        list.push(valor)
+        valor.id = childSnapshot.key
+        listCreaciones.push(valor)
       })
       if (actionType != null){
         dispatch({
           type: actionType,
           params: params, // can be null
-          data: list, // list with all d objects
+          data: listCreaciones, // list with all d objects
+        })
+      }
+
+      return snapshot.val()
+    })
+    .catch(err => {
+      throw err
+    })
+}
+const getFerias = (params, actionType) => {
+  return dispatch => DBferias.once('value')
+    .then(snapshot => {
+      snapshot.forEach(function(childSnapshot){
+        const valor = childSnapshot.val()
+        valor.id = childSnapshot.key
+        listFerias.push(valor)
+      })
+      if (actionType != null){
+        dispatch({
+          type: actionType,
+          params: params, // can be null
+          data: listFerias, // list with all d objects
         })
       }
 
@@ -36,7 +60,8 @@ const getCreaciones = (params, actionType) => {
     })
 }
 
-export default {
 
+export default {
+  getFerias: getFerias,
   getCreaciones: getCreaciones,
 }

@@ -25,7 +25,7 @@ export default class CarroProduct extends Component {
 
   render() {
     let name = this.props.propiedades.name
-    let url = '/images/'+this.props.propiedades.name
+    let url = this.props.propiedades.pic
     var precio = this.props.propiedades.precio * this.props.propiedades.unidades
     return (
 

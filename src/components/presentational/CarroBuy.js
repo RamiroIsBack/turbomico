@@ -4,6 +4,7 @@ import style from './styles'
 import arteLogo from '../../../assets/images/artesaniaDeGalicia-1.png'
 export default class CarroBuy extends Component {
   render() {
+    console.log ('subtotal: '+this.props.subTotal)
     return (
       <div class ='row container-fluid' style= {style.foto.container}>
         <div class='container-fluid col-xs-12 col-sm-12 col-md-6 col-lg-8' >
@@ -17,7 +18,7 @@ export default class CarroBuy extends Component {
             <div class='container-fluid col-xs-6 col-sm-6 col-md-6 col-lg-4' style= {style.foto.container}>
 
               <h5>{this.props.subTotal} €</h5>
-              <h5 class = 'text-muted'>free</h5>
+              <h5 class = 'text-muted'>gratis</h5>
               <h5 style = {style.carroProduct.texto}>{this.props.subTotal} €</h5>
             </div>
             <a class= 'btn btn-success' style= {style.carroProduct.btnPedido}> REALIZAR PEDIDO

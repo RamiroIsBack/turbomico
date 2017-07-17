@@ -26,9 +26,15 @@ export default {
   foto:{
     container:{
       display : 'inline-block',
+      //display : 'block',
       padding: '2px',
       border: 'none',
-      borderRadius:'10px'
+      borderRadius:'10px',
+      //verticalAlign: 'top',
+      //margin: 'auto',
+      //a una mala hago esto pa dejarlo fijo
+      //width:'330px',
+      //height: '230px',
     },
     panel:{
       display : 'inline-block',
@@ -43,23 +49,7 @@ export default {
       borderRadius:'10px'
     },
   },
-  navbar:{
-    container:{
-      //#e3f2fd, #C4F4D0
-      //backgroundColor: '#e3f2fd',
-      background: 'rgba(0,0,0,0.7)'
 
-    },
-    comprarButtonContainer :{
-      float : 'right',
-      marginRight: '15px',
-    },
-    comprarButtonStyle :{
-      backgroundColor: 'black',
-      borderRadius:'15px',
-      border : 'none'
-    }
-  },
   sidebar:{
     container:{
       marginTop : 80,
@@ -77,18 +67,29 @@ export default {
   },
   feria:{
     container:{
-      padding: 16,
-      background: '#F6CEF5',
-      marginTop:12,
-      border:'2px solid #F6CEE3'
+      //padding: 16,
+
+      //marginTop:6,
+      //borderBottom: '1px solid'
+    },
+    btnlink:{
+      textAlign :'center',
+      fontSize: '13px',
+      //fontWeight: 'bold',
+      backgroundColor: 'black',
+      width : '100%',
+      margin: 'auto',
+      //marginRight: '4px',
+
     },
     header:{
       marginTop:0,
       marginBottom:0
     },
     title:{
-      textDecoration:'none',
-      color:'red'
+      //textDecoration:'none',
+      //color:'red'
+      fontWeight: 400,
     },
     texto:{
       fontStyle: 'italic',

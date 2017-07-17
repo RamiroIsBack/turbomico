@@ -11,16 +11,34 @@ export default {
 
   //ALSO
   //Fortunately, Redux Thunk offers you a way to read the current state of the Redux store. In addition to dispatch, it also passes getState as the second argument to the function you return from your thunk action creator
+  moveToCreacionesSection:(creacionTipo)=>{
+    return{
+      type: constants.MOVETO_CREACION_SECTION,
+      data: creacionTipo
+    }
+  },
+  moveToFeriasSection: (feriaName)=>{
+    return{
+      type: constants.MOVETO_FERIA_SECTION,
+      data: feriaName
+    }
+
+  },
   getCreaciones: (params)=>{
     return dispatch => {
       return dispatch(Firebase.getCreaciones(params, constants.CREACIONES_RECEIVED))
     }
 
   },
+  getFerias: (params)=>{
+    return dispatch => {
+      return dispatch (Firebase.getFerias(params, constants.FERIAS_RECEIVED))
+    }
+  },
   // Another simple pure action creator
   selectedFoto: (foto) => {
     // key 'type' is mandatory after that, u can send whatever
-    console.log ('selectedfoto action' + JSON.stringify(foto))
+    //console.log ('selectedfoto action' + JSON.stringify(foto))
     return {
       type: constants.SELECT_FOTO,
       data: foto
@@ -29,7 +47,7 @@ export default {
   },
   eraseProduct: (indice) => {
     // key 'type' is mandatory after that, u can send whatever
-    console.log ('erasing from cart ' + JSON.stringify(indice))
+    //console.log ('erasing from cart ' + JSON.stringify(indice))
     return {
       type: constants.ERASE_PRODUCT,
       data: indice
@@ -48,7 +66,7 @@ export default {
   },
   productToCart: (product) => {
     // key 'type' is mandatory after that, u can send whatever
-    console.log ('PRODCUT_TO_CART action' + JSON.stringify(product))
+    //console.log ('PRODCUT_TO_CART action' + JSON.stringify(product))
     return {
       type: constants.PRODCUT_TO_CART,
       data: product

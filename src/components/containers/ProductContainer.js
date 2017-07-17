@@ -4,11 +4,17 @@ import {connect} from 'react-redux'
 import {Product, ProductSpecification} from '../presentational'
 
 class ProductContainer extends Component {
+  compoenentDidMount(){
+    //make it start at the top of the page every time
+    window.scrollTo(0, 0)
+  }
+  compoenentDidUpdate(){
+    //make it start at the top of the page every time
+    window.scrollTo(0, 0)
+  }
 
   selectProduct(selectedProduct){
-    console.log ('caca '+ JSON.stringify(selectedProduct))
-    //pongo a 1 'unidades' x si viene del carro
-    selectedProduct.unidades = 1
+    //console.log ('caca '+ JSON.stringify(selectedProduct))
     //this fires an action down below in this class
     this.props.selectFoto(selectedProduct)
   }

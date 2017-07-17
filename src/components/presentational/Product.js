@@ -9,7 +9,7 @@ export default class Product extends Component {
   }
 
   render() {
-    let url = '/images/'+this.props.propiedades.name
+    let url = this.props.propiedades.pic
 
     return (
       <div class='card '>
@@ -20,9 +20,9 @@ export default class Product extends Component {
           <h4 class='card-title'>Card title</h4>
           <p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
           <NavLink to='/Carro' type='button' class='btn btn-success list-inline' style= {style.carroProduct.btnPedido} onClick={this.handleClick.bind(this)}>
-              <li class='glyphicon glyphicon-shopping-cart'>
-              </li>
-              <li><h4>Añadir al carro</h4></li>
+            <li class='glyphicon glyphicon-shopping-cart'>
+            </li>
+            <li><h4>Añadir al carro</h4></li>
           </NavLink>
         </div>
       </div>

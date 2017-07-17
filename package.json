@@ -20,6 +20,7 @@
     "express": "latest",
     "file-loader": "latest",
     "firebase": "^4.1.3",
+    "history": "^4.6.3",
     "hjs": "latest",
     "hogan-middleware": "latest",
     "jsonwebtoken": "latest",
