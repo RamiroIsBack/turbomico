@@ -30,6 +30,7 @@ export default {
       padding: '2px',
       border: 'none',
       borderRadius:'10px',
+      marginBottom: '2px'
       //verticalAlign: 'top',
       //margin: 'auto',
       //a una mala hago esto pa dejarlo fijo
@@ -48,6 +49,17 @@ export default {
       backgroundRepeat: 'no-repeat',
       borderRadius:'10px'
     },
+    footName:{
+      marginTop : '1px',
+      marginLeft : '10px',
+      marginBottom: '15px',
+      fontWeight : 'bold',
+    },
+    footPrice:{
+      marginRight : '10px',
+      marginTop : '1px',
+      marginBottom: '15px',
+    }
   },
 
   sidebar:{
@@ -100,5 +112,60 @@ export default {
       font: '12px Georgia',
       fontWeight: 200
     }
-  }
+  },
+  modal:{
+  // The gray background
+    backdropStyle :{
+      position: 'fixed',
+      //display : 'block',
+      top: 0,
+      left: 0,
+      width: '100%',
+      height: '100%',
+      backgroundColor: 'rgba(0,0,0,0.75)',
+      //To make sure that it is really on top of all other elements, we set z-index to a high value (by default all elements have a z-index value of 0).
+      zIndex: 6667,
+      padding: 60
+    },
+
+    // The modal "window"
+    modalStyle : {
+      backgroundColor: '#fff',
+      borderRadius: 10,
+      maxWidth: 700,
+      minHeight: 300,
+      maxHeight: 700,
+      margin: '0 auto',
+      padding: 15
+    },
+    btnClose : {
+      backgroundColor: 'rgba(255,255,255,0.75)',
+      paddingRight: '18px',
+      paddingLeft: '18px',
+      borderRadius: '5px',
+      fontSize: '19px',
+      border: 'none',
+    },
+    formContainer : {
+      backgroundColor: 'rgba(255,255,255,0.75)',
+      position: 'absolute',
+      height: '100%',
+      overflow: 'hidden',
+      borderRadius: '5px',
+      paddingLeft: '8px',
+    },
+    btnRegistrarse: {
+      fontSize: '19px',
+      backgroundColor: 'black',
+    },
+    btnNewsletter: {
+      cursor: 'pointer',
+      padding: '2px',
+      border: 'none',
+      borderRadius:'5px',
+      color :'white',
+      fontSize: '16px',
+      backgroundColor: 'black',
+    },
+  },
 }

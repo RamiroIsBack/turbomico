@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import actions from '../../actions'
 import { connect } from 'react-redux'
 import {Feria} from '../presentational'
+import styles from './styles'
+
 class FeriaContainer extends Component {
   constructor(){
     super()
@@ -11,10 +13,14 @@ class FeriaContainer extends Component {
       //en el reducer ya lo pone a true
       this.props.getFerias()
     }
-    //make it start at the top of the page every time
-    window.scrollTo(0, 0)
+
     if (this.props.firebaseFerias.feriaSectionSelected != 'allFerias'){
-      this.focusDiv(this.props.firebaseFerias.feriaSectionSelected)
+      setTimeout(() => {
+        this.focusDiv(this.props.firebaseFerias.feriaSectionSelected)
+      }, 500)
+    }else{
+      //make it start at the top of the page every time
+      window.scrollTo(0, 0)
     }
   }
   componentDidUpdate(){
@@ -49,18 +55,28 @@ class FeriaContainer extends Component {
   render() {
     let feriaList = this.props.firebaseFerias.listaFerias
     const feriasComponents = feriaList.map((feria,i)=>{
-      return(
-        <div class='contianer-fluid' key ={i} ref={(el) => this[feria.id] = el}>
-          <div class='contianer-fluid row' >
-            <Feria propiedades ={feria} whenClicked={this.selectFeria.bind(this)}/>
+      if (!feria.caducada){
+        return(
+          <div class='contianer-fluid' key ={i} ref={(el) => this[feria.id] = el}>
+            <hr/>
+            <div class='contianer-fluid row' style = {styles.headerRowFerias.container}>
+              {feria.enCurso&&
+                <h3 style = {{backgroundColor: 'grey', color:'yellow',textAlign :'center'}}>estamos en {feria.nombre}, ven a visitarnos! </h3>
+
+              }
+
+              <Feria propiedades ={feria} whenClicked={this.selectFeria.bind(this)}/>
+
+            </div>
           </div>
-          <hr/>
-        </div>
-      )
+        )
+      }
     })
     return (
       <div class ='contianer-fluid'>
+
         {feriasComponents}
+
       </div>
     )
   }

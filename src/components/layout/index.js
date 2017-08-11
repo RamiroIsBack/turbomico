@@ -2,19 +2,19 @@ import Home from './Home'
 import Diseños from './Diseños'
 import Productos from './Productos'
 import Ferias from './Ferias'
-import Login from './Login'
+import Registrarse from './Registrarse'
 import Carro from './Carro'
-import Alba from './Alba'
 import Contacto from './Contacto'
+import Conocenos from './Conocenos'
 
 export {
-  Contacto,
+  Conocenos,
   Home,
   Diseños,
   Productos,
   Ferias,
-  Login,
+  Registrarse,
   Carro,
-  Alba,
+  Contacto,
 
 }

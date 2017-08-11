@@ -11,6 +11,14 @@ export default {
 
   //ALSO
   //Fortunately, Redux Thunk offers you a way to read the current state of the Redux store. In addition to dispatch, it also passes getState as the second argument to the function you return from your thunk action creator
+
+  toggleModal: (modalName) => {
+    return {
+      type: constants.TOGGLE_MODAL,
+      data: modalName,
+    }
+  },
+
   moveToCreacionesSection:(creacionTipo)=>{
     return{
       type: constants.MOVETO_CREACION_SECTION,
@@ -24,6 +32,13 @@ export default {
     }
 
   },
+  getContenidos: (params)=>{
+    return dispatch => {
+      return dispatch(Firebase.getContenidos(params, constants.CONTENIDOS_RECEIVED))
+    }
+
+  },
+
   getCreaciones: (params)=>{
     return dispatch => {
       return dispatch(Firebase.getCreaciones(params, constants.CREACIONES_RECEIVED))

@@ -23,17 +23,42 @@ export default (state = initialState, action) => {
         a = a.fecha.split('/')
         b = b.fecha.split('/')
 
-        return a[i]>b[i] ? -1 : a[i]<b[i] ? 1 : 0
+        return a[i]>b[i] ? 1 : a[i]<b[i] ? -1 : 0
       })
     }
-    console.log (' from reducer FERIAS_RECEIVED: ' +JSON.stringify(list))
-    //las ferias mas nuevas arriba
+    //las ferias mas nuevas abajo (si cambio el 1 y el -1 seria al reves)
+
+    //lo paso a formato yyyy/mm/dd para poder operar con Date Object y miro a ver si est'a en curso o est'a caducada
+    for (let i = 0; i < list.length; i++) {
+      let date = list[i].fecha
+      let parts = date.split('/')
+      //                       year        month         day
+      let feriaDate = new Date(parts[2], parts[1] - 1, parts[0])
+
+      //calculo el final de la feria segun sus dias d duracion
+      //aunq ya lo hago al recoger los datos pero ya lo quitar'e d aqui
+      let finalFeriaDate = feriaDate
+      finalFeriaDate = new Date(feriaDate.getFullYear(),feriaDate.getMonth(),feriaDate.getDate()+list[i].duracion)
+      list[i].fechaFinal = finalFeriaDate
+      let diaHoy = new Date()
+
+      if (feriaDate < diaHoy && diaHoy < list[i].fechaFinal){
+        list[i].enCurso = true
+      }else{
+        list[i].enCurso = false
+      }
+      if (finalFeriaDate < diaHoy){
+        list[i].caducada = true
+      }else{
+        list[i].caducada = false
+      }
+    }
+
     newState['listaFerias'] = list
     return newState
 
   case constants.MOVETO_FERIA_SECTION:
     newState['feriaSectionSelected'] = action.data
-    console.log (' from reducer feriaSectionSelected: ' +action.data)
     return newState
 
   default:

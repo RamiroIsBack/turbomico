@@ -41,7 +41,10 @@ class NavbarMicoFront extends Component {
   //gestionar el colapso del boton del navegador cuando está minimizado
   //solo hace cambiar de estado
   gestionaColapso(event){
-
+    //click en registrarse as'i q mostrar el dialogo modal xa registrarse
+    if (event.target.id == 'registrarse'){
+      this.props.toggleModal('openRegistrarse')
+    }
     //de los dropdown
     //console.log ('gestionaColapso: ' +JSON.stringify(event.target.id))
     if (event.target.id == 'creaciones'){
@@ -99,10 +102,11 @@ class NavbarMicoFront extends Component {
 
     let feriaDB = this.props.storeFerias.listaFerias
     let creacionDB =this.props.storeCreaciones.listaCreaciones
+    let registrarseShowing = this.props.storeModal.registrarseShowing
     var creacionList =[]
     //TODO:
-//si lista.length > 3 hacer 2 filas con el conditional rendering
-//valorar hacer 2 componentes presentational
+    //si lista.length > 3 hacer 2 filas con el conditional rendering
+    //valorar hacer 2 componentes presentational
     let a =0
     for (var tipo in creacionDB) {
       if (creacionDB.hasOwnProperty(tipo)) {
@@ -114,9 +118,23 @@ class NavbarMicoFront extends Component {
 
       //console.log('cacoa'+feria.nombre )
       var feriaList = feriaDB.map((feria,i)=>{
-        return(
-          <li key = {i}><NavLink id='ferias' name= {feria.nombre} onClick = {this.gestionaColapso.bind(this)} to ='/Ferias'>{feria.nombre}</NavLink></li>
-        )
+        let estilo = {}
+        if (feria.enCurso){
+          estilo = {backgroundColor: 'grey', color:'yellow'}
+        }else{
+          if(i==0){
+            estilo ={fontWeight: 400 }
+          }
+        }
+        if(!feria.caducada){
+          return(
+            <li key = {i}>
+              <NavLink id='ferias' name= {feria.nombre} onClick = {this.gestionaColapso.bind(this)} to ='/Ferias' style ={estilo}>
+                {feria.nombre} {feria.fecha}
+              </NavLink>
+            </li>
+          )
+        }
       })
 
     }
@@ -133,8 +151,21 @@ class NavbarMicoFront extends Component {
     //si toggleFeriasDropdown es true añade ' open' y si es false añade '' para cerrarlo
     const toggleFeriasDropdown = feriasColapsed ? '' : ' open'
 
+    //oscurecer un poco y no permitir clicks si se est'a mostrando el dialogo modal
+    var noClicks ={
+      pointerEvents:'none', //This makes it not clickable
+      opacity:0.6,          //This grays it out to look disabled
+      background: 'rgba(0,0,0,0.7)'
+    }
+    var navbarStilo
+    if (!registrarseShowing){
+      navbarStilo = style.navbar.container
+    }else {
+      navbarStilo =noClicks
+    }
+
     return (
-      <nav class='navbar navbar-inverse navbar-fixed-top sticky' role='navigation' style= {style.navbar.container}>
+      <nav class='navbar navbar-inverse navbar-fixed-top sticky' role='navigation' style= {navbarStilo}>
         <div class='container-fluid'>
 
           <ul class = 'nav nav-pills navbar-right fixed-top hide-while-loading' style = {style.navbar.comprarButtonContainer}>
@@ -181,14 +212,15 @@ class NavbarMicoFront extends Component {
                 </ul>
               </li>
 
-              <li><NavLink to='/Contacto'
-                onClick = {this.gestionaColapso.bind(this)}>Contacto</NavLink></li>
+              <li><NavLink to='/Conocenos'
+                onClick = {this.gestionaColapso.bind(this)}>Conocenos</NavLink></li>
             </ul>
             <ul class = 'nav navbar-nav navbar-right hide-while-loading'>
-              <li><NavLink to='/Login'
-                onClick = {this.gestionaColapso.bind(this)}>Login</NavLink></li>
-              <li><NavLink to='/Alba'
-                onClick = {this.gestionaColapso.bind(this)}>Alba</NavLink></li>
+              <li><NavLink to='/Contacto'
+                onClick = {this.gestionaColapso.bind(this)} id = 'contacto'>Contacto</NavLink></li>
+              <li><a style = {{cursor: 'pointer'}} onClick = {this.gestionaColapso.bind(this)} id = 'registrarse'>
+              Registrarse
+              </a></li>
             </ul>
 
           </div>
@@ -207,6 +239,8 @@ const dispatchToProps = (dispatch) =>{
 
     moveToCreacionesSection:(creacionTipo)=>dispatch(actions.moveToCreacionesSection(creacionTipo)),
     moveToFeriasSection: (feriaName)=>dispatch(actions.moveToFeriasSection(feriaName)),
+
+    toggleModal: (modalName) =>dispatch(actions.toggleModal(modalName))
   }
 }
 const stateToProps = (state) => {
@@ -218,6 +252,7 @@ const stateToProps = (state) => {
     countCart:state.carro,
     storeFerias:state.feria,
     storeCreaciones:state.creacion,
+    storeModal:state.modal,
   }
 }
 //                                   ****

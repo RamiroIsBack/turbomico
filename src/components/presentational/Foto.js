@@ -22,11 +22,11 @@ export default class Foto extends Component {
   }
   handlepic2(){
     this.setState ({url2 :true})
-    console.log('paso al pic 2')
+
   }
   handlepic1(){
     this.setState ({url2 :false})
-    console.log('paso al pic 1')
+
   }
   //TODO read about image preloading
   render() {
@@ -36,15 +36,23 @@ export default class Foto extends Component {
     }
 
     let nombre = this.props.propiedades.nombre
+    let precio =this.props.propiedades.precio
     //console.log ('caca '+ url)
     return (
 
-      <div class = 'container-fluid col-xs-12 col-sm-6 col-md-4 col-lg-4' style= {style.foto.container}>
+      <div class = 'container col-xs-12 col-sm-6 col-md-4 col-lg-4' style= {style.foto.container}>
         <div  class='btn btn-block' onClick = {this.handleClick.bind(this)} onMouseEnter={this.handlepic2.bind(this)} onMouseLeave={this.handlepic1.bind(this)} style= {style.foto.container}>
           <img src= {url} class="img-responsive" style= {style.foto.cover}  alt={nombre}>
           </img>
         </div>
-
+        <div class = 'row'>
+          <div class = 'container-fluid col-xs-9 col-sm-9 col-md-9 col-lg-9'>
+            <h5 class='text-muted' style= {style.foto.footName}>{nombre}</h5>
+          </div>
+          <div class = 'container-fluid col-xs-3 col-sm-3 col-md-3 col-lg-3'>
+            <h6 class = 'text-muted pull-right' style= {style.foto.footPrice}>{precio}€</h6>
+          </div>
+        </div>
       </div>
     )
   }

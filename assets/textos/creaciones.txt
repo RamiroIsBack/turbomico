@@ -1,0 +1,12 @@
+esto es una pruba para ver que se cargan bien los textos y as'i
+
+deberia respetar
+1- saltos de linea
+2- espacios y caracteres de todo tipo
+
+
+
+
+            vamos a ver q tal ....
+
+y si meto mucho mas texto asi para q ocupe bien d espacio a ver q tal , me molar'ia que esto guardase las opciones metidas en el editor de texto y ademas que tambien guardase las preferencias de tama;o y tipo de letra pero claro para eso me tengo que bajar otro editor de texto q este es solo para programar y no tienten de esasa cosas
