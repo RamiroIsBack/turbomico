@@ -79,12 +79,12 @@ class HomeContainer extends Component {
 
 
     return (
-      <div class ='container-fluid'>
+      <div class ='container-fluid' >
         <NavLink class ='btn btn-block' to='/Diseños' style={style.home.navlinkBtn}>
           <img role='presentation' src={urlPicCreaciones}  class ='img-rounded' >
           </img>
-          <div class = 'carousel-caption ' style = {{padding: '0px', top: 70 }}>
-            <h3  style = {{backgroundColor: 'black' ,borderRadius:'4px', padding: '0px',marginTop : 5}}>{headerCreaciones}</h3>
+          <div class = 'col-xs-offset-2 col-xs-8 col-sm-offset-2 col-sm-7 col-md-offset-2 col-md-7 col-lg-offset-2 col-lg-7 carousel-caption' style = {{padding: '0px', top: 60 , }}>
+            <h3  style = {{backgroundColor: 'black' ,borderRadius:'4px', padding: '0px',marginTop : 5,overflow: 'hidden'}}>{headerCreaciones}</h3>
           </div>
         </NavLink>
         <hr/>
@@ -103,8 +103,8 @@ class HomeContainer extends Component {
             <NavLink class ='container-fluid btn btn-block ' to='/Ferias' style={style.home.navlinkBtn}>
               <img role='presentation' src={urlPicFerias}  class ='img-rounded' >
               </img>
-              <div class = 'carousel-caption ' style = {{padding: '0px', top: 0}}>
-                <h3  style = {{backgroundColor: 'black' ,borderRadius:'4px', padding: '0px',marginTop : 5}}>{headerFerias}</h3>
+              <div class = 'carousel-caption ' style = {{padding: '0px', top: 0, left: 10, right: 10}}>
+                <h3  style = {{backgroundColor: 'black' ,borderRadius:'4px', padding: '0px',marginTop : 5, overflow: 'hidden'}}>{headerFerias}</h3>
               </div>
             </NavLink>
           </div>
@@ -112,8 +112,8 @@ class HomeContainer extends Component {
             <NavLink class ='container-fluid btn btn-block' to='/Conocenos' style={style.home.navlinkBtn}>
               <img role='presentation' src={urlPicConocenos}  class ='img-rounded' >
               </img>
-              <div class = 'carousel-caption ' style = {{padding: '0px', top: 0}}>
-                <h3  style = {{backgroundColor: 'black' ,borderRadius:'4px', padding: '0px',marginTop : 5}}>{headerConocenos}</h3>
+              <div class = 'carousel-caption ' style = {{padding: '0px', top: 0, left: 10, right: 10}}>
+                <h3  style = {{backgroundColor: 'black' ,borderRadius:'4px', padding: '0px',marginTop : 5, overflow: 'hidden'}}>{headerConocenos}</h3>
               </div>
             </NavLink>
           </div>

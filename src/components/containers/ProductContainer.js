@@ -20,21 +20,25 @@ class ProductContainer extends Component {
   }
 
   render() {
+    let artesania = {}
+
+    for (let i = 0 ; i < this.props.storeContenidos.listaContenidos.length ; i++) {
+
+      if (this.props.storeContenidos.listaContenidos[i].id == 'artesania'){
+        artesania = this.props.storeContenidos.listaContenidos[i]
+        break
+      }
+    }
     //selectedFoto es el key del valor del state en el store
     var product = this.props.productToshow.selectedFoto
-    var material =''
-    if(product.materiales != null){
-      material = product.materiales
-    }else{
-      material = 'pelo'
-    }
+
     return (
       <div>
         <div class='container-fluid col-xs-12 col-sm-8 col-md-8 col-lg-6'>
           <Product propiedades = {product} whenClicked={this.selectProduct.bind(this)}/>
         </div>
         <div class='container-fluid col-xs-12 col-sm-4 col-md-4 col-lg-6'>
-          <ProductSpecification propiedades = {product}/>
+          <ProductSpecification propiedades = {product} contenido = {artesania}/>
         </div>
       </div>
     )
@@ -55,7 +59,8 @@ const stateToProps = (state) => {
   return{
     //en state.blabla dices de que reducer quieres info
     //y tu le asignas una key q quieras
-    productToshow:state.product
+    productToshow:state.product,
+    storeContenidos: state.contenidos,
   }
 }
 

@@ -40,12 +40,12 @@ export default class Foto extends Component {
     //console.log ('caca '+ url)
     return (
 
-      <div class = 'container col-xs-12 col-sm-6 col-md-4 col-lg-4' style= {style.foto.container}>
+      <div class = 'container col-xs-6 col-sm-6 col-md-4 col-lg-4' style= {{width: 300, height: 275, }}>
         <div  class='btn btn-block' onClick = {this.handleClick.bind(this)} onMouseEnter={this.handlepic2.bind(this)} onMouseLeave={this.handlepic1.bind(this)} style= {style.foto.container}>
           <img src= {url} class="img-responsive" style= {style.foto.cover}  alt={nombre}>
           </img>
         </div>
-        <div class = 'row'>
+        <div class = 'row' style= {style.foto.container}>
           <div class = 'container-fluid col-xs-9 col-sm-9 col-md-9 col-lg-9'>
             <h5 class='text-muted' style= {style.foto.footName}>{nombre}</h5>
           </div>

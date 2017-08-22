@@ -48,7 +48,10 @@ export default class CarroProduct extends Component {
                   </btn>
                 </th>
               </tr>
-
+              <tr>
+                <td>precio/unidad: </td>
+                <td>{this.props.propiedades.precio}</td>
+              </tr>
               <tr>
                 <td>Existencias: </td>
                 <td>{this.props.propiedades.disponibilidad} disponible</td>
@@ -66,7 +69,7 @@ export default class CarroProduct extends Component {
                 </td>
               </tr>
               <tr>
-                <td>precio:</td>
+                <td>precio <small>(x{this.props.propiedades.unidades})</small>:</td>
                 <td class = 'pull-right' style = {style.carroProduct.texto}>{precio} €</td>
 
               </tr>

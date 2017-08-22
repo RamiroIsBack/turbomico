@@ -14,7 +14,7 @@ export default {
       fontSize: '13px',
       fontWeight: 'bold',
       backgroundColor: 'black',
-      width : '100%',
+      width : '90%',
       marginRight: '5px',
 
     },
@@ -22,10 +22,11 @@ export default {
   },
   product:{
     borderRadius:'10px',
+    minHeight: '300px',
   },
   foto:{
     container:{
-      display : 'inline-block',
+      //display : 'inline-block',
       //display : 'block',
       padding: '2px',
       border: 'none',
@@ -44,9 +45,11 @@ export default {
       borderRadius:'10px'
     },
     cover: {
-      backgroundPosition: 'center',
-      backgroundSize: 'cover',
-      backgroundRepeat: 'no-repeat',
+      //backgroundPosition: 'center',
+      //backgroundSize: 'cover',
+      //backgroundRepeat: 'no-repeat',
+      maxWidth: 290,
+      maxHeight: 200,
       borderRadius:'10px'
     },
     footName:{
@@ -83,6 +86,33 @@ export default {
 
       //marginTop:6,
       //borderBottom: '1px solid'
+    },
+    headlineContainer:{
+      //marginTop: 50,
+      //marginBottom: 20,
+      //paddingRight: 30,
+      paddingTop: 60,
+      paddingBottom: 50,
+      backgroundImage: 'url(https://firebasestorage.googleapis.com/v0/b/mico-62a9a.appspot.com/o/contenidos%2FbacklineFeria4.png?alt=media&token=30b4db56-d8d6-4aa0-8f18-439664171d36)',
+      backgroundPosition: 'right bottom',
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat',
+      opacity: 0.8,
+      overflow: 'auto',
+      borderRadius: '5px',
+      maxWidth: 1600,
+
+    },
+    mapsLink:{
+
+      paddingRight: 5,
+      paddingTop: 10,
+      opacity: 0.9,
+      //display : 'block',
+      //overflow: 'auto',
+      //borderRadius: '5px',
+      maxWidth: 100,
+
     },
     btnlink:{
       textAlign :'center',
@@ -150,7 +180,8 @@ export default {
       backgroundColor: 'rgba(255,255,255,0.75)',
       position: 'absolute',
       height: '100%',
-      overflow: 'hidden',
+      overflowY:'auto',
+      overflowX:'hidden',
       borderRadius: '5px',
       paddingLeft: '8px',
     },

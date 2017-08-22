@@ -9,12 +9,11 @@ export default class Carro extends Component {
   }
   render() {
     return (
-      <div class='container-fluid' id ='backgroundDiv'>
-        <div class='container-fluid' id ='containerDiv' style ={style.universal.containerDiv}>
-          mi carro me lo robaaaaron
-          <CarroContainer/>
-        </div>
+
+      <div class='container-fluid' id ='containerDiv' style ={style.universal.containerDiv}>
+        <CarroContainer/>
       </div>
+
     )
   }
 }

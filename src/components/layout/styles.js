@@ -57,16 +57,26 @@ export default {
     },
   },
   feria:{
+    headerFerias:{
+
+      paddingTop: 150,
+      paddingBottom: 100,
+      backgroundImage: 'url(https://firebasestorage.googleapis.com/v0/b/mico-62a9a.appspot.com/o/contenidos%2Fferia1.png?alt=media&token=996633e2-ad62-42b0-b395-c197b78becbe)',
+      backgroundPosition: 'right bottom',
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat',
+      //opacity: 0.9,
+      overflow: 'auto',
+      borderRadius: '5px',
+
+    },
     container:{
       padding: 16,
       background: '#F6CEF5',
       marginTop:12,
       border:'2px solid #F6CEE3'
     },
-    header:{
-      marginTop:0,
-      marginBottom:0
-    },
+
     title:{
       textDecoration:'none',
       color:'red'

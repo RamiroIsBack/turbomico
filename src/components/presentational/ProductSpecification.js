@@ -2,8 +2,9 @@ import React, { Component } from 'react'
 
 export default class ProductSpecification extends Component {
   render() {
+    let caca = this.props.propiedades
     return (
-      <div class ='container-fluid'>
+      <div class ='container-fluid' style={{padding: 0}}>
         <table class="table-condensed table-responsive">
           <tbody>
             <tr>
@@ -23,18 +24,21 @@ export default class ProductSpecification extends Component {
             <tr>
               <td>Materiales: </td>
               <td>
-                {(this.props.propiedades.materiales) ? this.props.propiedades.materiales : 'tela galega'}
+                {(this.props.propiedades.materiales) ? this.props.propiedades.materiales : 'no especificado'}
               </td>
             </tr>
           </tbody>
         </table>
-        <h2>100%
-          <small> Galego</small>
-        </h2>
-        <p >Aqui ir'a una descripci'on larga sobre que todo est'a hecho a mano, es producto artesano gallego
-        </p>
-        <p>Continuaci'on de la descripci'on larga sobre que todo est'a hecho a mano, es producto artesano gallego
-        </p>
+        <hr/>
+        <div class = 'container-fluid row col-xs-12 col-sm-12 col-md-12 col-lg-12'  >
+          {this.props.contenido.headerFoto.relacionArtesania.split('\n').map((item, key) => {
+            return <span key={key}>{item}<br/><br/></span>})}
+
+        </div>
+        <div class='container col-xs-8 col-sm-12 col-md-12 col-lg-12'  >
+          <img role='presentation' src={this.props.contenido.logo.urlLogoArtesania} class ='img-rounded'>
+          </img>
+        </div>
       </div>
     )
   }

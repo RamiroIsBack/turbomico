@@ -36,7 +36,6 @@ export default (state = initialState, action) => {
       let feriaDate = new Date(parts[2], parts[1] - 1, parts[0])
 
       //calculo el final de la feria segun sus dias d duracion
-      //aunq ya lo hago al recoger los datos pero ya lo quitar'e d aqui
       let finalFeriaDate = feriaDate
       finalFeriaDate = new Date(feriaDate.getFullYear(),feriaDate.getMonth(),feriaDate.getDate()+list[i].duracion)
       list[i].fechaFinal = finalFeriaDate

@@ -19,15 +19,17 @@ class FotoContainer extends React.Component {
 
   }
   //componentWillMount is executed once before the initial rendering occurs.
+  componentWillMount(){
+    if (this.props.storeContenidos.ContenidosLoaded == false){
+      //en la accion ya lo pone a true
+      this.props.getContenidos()
+    }
+  }
   //componentDidMount is executed once after the initial rendering.
   componentDidMount() {
     if (this.props.firebaseCreaciones.creacionesLoaded == false){
       //en la accion ya lo pone a true
       this.props.getCreaciones()
-    }
-    if (this.props.storeContenidos.ContenidosLoaded == false){
-      //en la accion ya lo pone a true
-      this.props.getContenidos()
     }
 
     //dont worry cuando le llegue 'all' se focalizar'a arriba
@@ -149,7 +151,7 @@ class FotoContainer extends React.Component {
       totalList.push(listItem)
       g++
       totalList.push (
-        <div class = 'container row' key = {g}><hr/></div>
+        <div class = 'container row' key = {g}><br/></div>
       )
       //console.log ('caca '+ g +JSON.stringify(key))
       g++

@@ -2,12 +2,15 @@ import React, { Component } from 'react'
 import actions from '../../actions'
 import { connect } from 'react-redux'
 import {Feria} from '../presentational'
-import styles from './styles'
+import style from './styles'
+import { NavLink} from 'react-router-dom'
 
 class FeriaContainer extends Component {
   constructor(){
     super()
   }
+  //componentWillMount is executed once before the initial rendering occurs.
+
   componentDidMount() {
     if (this.props.firebaseFerias.feriasLoaded == false){
       //en el reducer ya lo pone a true
@@ -53,17 +56,29 @@ class FeriaContainer extends Component {
   }
 
   render() {
+
     let feriaList = this.props.firebaseFerias.listaFerias
     const feriasComponents = feriaList.map((feria,i)=>{
       if (!feria.caducada){
         return(
           <div class='contianer-fluid' key ={i} ref={(el) => this[feria.id] = el}>
-            <hr/>
-            <div class='contianer-fluid row' style = {styles.headerRowFerias.container}>
+
+            <div class='contianer-fluid row'>
+
+
               {feria.enCurso&&
-                <h3 style = {{backgroundColor: 'grey', color:'yellow',textAlign :'center'}}>estamos en {feria.nombre}, ven a visitarnos! </h3>
+                <NavLink class ='container-fluid btn btn-block ' to='/Ferias' style={{cursor: 'default', padding: '0px',border: 'none',}}>
+                  <img role='presentation' src='https://firebasestorage.googleapis.com/v0/b/mico-62a9a.appspot.com/o/contenidos%2FbubleMesage3.png?alt=media&token=5aba160b-bb68-4362-9582-8f9c6f29ebc2}'  class ='img-rounded' style ={{maxHeight: '200px', width : '100%',minHeight: '151px', display : 'block',
+                    }} >
+                  </img>
+                  <div class = 'carousel-caption' style = {{color :'black',top: 30}}>
+                    <h3  style = {{textAlign :'center',borderRadius:'4px', padding: '0px',marginTop : 0,marginBottom : 0, overflow: 'hidden'}}>estamos en {feria.nombre}</h3>
+                    <h3  style = {{textAlign :'center',borderRadius:'4px', padding: '0px',marginTop : 5,marginBottom : 0, overflow: 'hidden'}} >!ven a visitarnos!</h3>
+                  </div>
+                </NavLink>
 
               }
+
 
               <Feria propiedades ={feria} whenClicked={this.selectFeria.bind(this)}/>
 
@@ -92,7 +107,7 @@ const stateToProps = (state) => {
   return{
     //en state.blabla dices de que reducer quieres info
     //y tu le asignas una key q quieras
-    firebaseFerias:state.feria
+    firebaseFerias:state.feria,
   }
 }
 //it would be null at d first argument cos i was not registering
