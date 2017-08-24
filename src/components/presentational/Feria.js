@@ -78,7 +78,7 @@ export default class Feria extends React.Component {
                 </img>
               </div>
               <div class='container-fluid col-xs-8 col-sm-7 col-md-8 col-lg-9'  >
-                <p id='mapsLink' style = {{whiteSpace: 'initial'}}>{this.props.propiedades.direccion}</p>
+                <p id='mapsLink' style = {{whiteSpace: 'initial',paddingTop:10, fontSize: 15}}>{this.props.propiedades.direccion}</p>
               </div>
 
             </div>

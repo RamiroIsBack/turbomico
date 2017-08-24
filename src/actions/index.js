@@ -32,6 +32,12 @@ export default {
     }
 
   },
+  getEnlaces: (params)=>{
+    return dispatch => {
+      return dispatch(Firebase.getEnlaces(params, constants.ENLACES_RECEIVED))
+    }
+
+  },
   getContenidos: (params)=>{
     return dispatch => {
       return dispatch(Firebase.getContenidos(params, constants.CONTENIDOS_RECEIVED))

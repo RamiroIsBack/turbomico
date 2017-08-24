@@ -4,7 +4,7 @@ import history from './utils/history'
 import store from './stores'
 import { Provider } from 'react-redux'
 import {Home,Contacto,Carro,Diseños,Ferias,Conocenos,Registrarse,Productos} from './components/layout'
-import {ModalRegistrarseContainer , NavbarMicoFront} from './components/containers'
+import {ModalRegistrarseContainer , NavbarMicoFront,FooterContainer} from './components/containers'
 
 import {
   Router as Router,
@@ -38,6 +38,7 @@ class Turbomico extends Component {
               <Route path="/Conocenos" component={Conocenos}/>
               <Route path="/Productos" component={Productos}/>
             </div>
+            <FooterContainer/>
           </div>
         </Router>
       </Provider>

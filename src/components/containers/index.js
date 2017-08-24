@@ -10,7 +10,9 @@ import ContactoContainer from './ContactoContainer'
 import ConocenosContainer from './ConocenosContainer'
 import RegistrarseContainer from './RegistrarseContainer'
 import ContenidoFeriaContainer from './ContenidoFeriaContainer'
+import FooterContainer from './FooterContainer'
 export {
+  FooterContainer,
   ContenidoFeriaContainer,
   HomeContainer,
   ModalRegistrarseContainer,

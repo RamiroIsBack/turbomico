@@ -1,9 +1,10 @@
+
 import constants from '../constants'
 
 var initialState = {
 
-  listaContenidos: [],
-  ContenidosLoaded :false ,
+  listaEnlaces: [],
+  enlacesLoaded :false ,
 
 }
 
@@ -11,12 +12,12 @@ export default (state = initialState, action) => {
   let newState = Object.assign({}, state)
   switch (action.type) {
 
-  case constants.CONTENIDOS_RECEIVED:
-    //console.log (' from reducer Contenidos_RECEIVED: ' +JSON.stringify(action.data))
-    newState['ContenidosLoaded'] = true
+  case constants.ENLACES_RECEIVED:
+    console.log (' from reducer enlaces_RECEIVED: ' +JSON.stringify(action.data))
+    newState['enlacesLoaded'] = true
     let list = action.data
 
-    newState['listaContenidos'] = list
+    newState['listaEnlaces'] = list
     return newState
 
   /*case constants.MOVETO_FERIA_SECTION:

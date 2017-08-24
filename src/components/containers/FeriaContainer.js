@@ -67,21 +67,16 @@ class FeriaContainer extends Component {
 
 
               {feria.enCurso&&
-                <NavLink class ='container-fluid btn btn-block ' to='/Ferias' style={{cursor: 'default', padding: '0px',border: 'none',}}>
-                  <img role='presentation' src='https://firebasestorage.googleapis.com/v0/b/mico-62a9a.appspot.com/o/contenidos%2FbubleMesage3.png?alt=media&token=5aba160b-bb68-4362-9582-8f9c6f29ebc2}'  class ='img-rounded' style ={{maxHeight: '200px', width : '100%',minHeight: '151px', display : 'block',
-                    }} >
-                  </img>
-                  <div class = 'carousel-caption' style = {{color :'black',top: 30}}>
-                    <h3  style = {{textAlign :'center',borderRadius:'4px', padding: '0px',marginTop : 0,marginBottom : 0, overflow: 'hidden'}}>estamos en {feria.nombre}</h3>
-                    <h3  style = {{textAlign :'center',borderRadius:'4px', padding: '0px',marginTop : 5,marginBottom : 0, overflow: 'hidden'}} >!ven a visitarnos!</h3>
-                  </div>
-                </NavLink>
+
+                <div class = 'container' style = {{paddingTop: 10}}>
+                  <h4  style = {{textAlign :'center',borderRadius:'4px', padding: '0px',marginTop : 0,marginBottom : 0, overflow: 'hidden'}}>ahora estamos en {feria.nombre}</h4>
+                  <h4  style = {{textAlign :'center',borderRadius:'4px', padding: '0px',marginTop : 5,marginBottom : 0, overflow: 'hidden'}} >!ven a visitarnos!</h4>
+                </div>
 
               }
 
-
               <Feria propiedades ={feria} whenClicked={this.selectFeria.bind(this)}/>
-
+              <br/>
             </div>
           </div>
         )
@@ -118,4 +113,17 @@ export default connect (stateToProps,dispatchToProps)(FeriaContainer)
 
 
 
+//comic bubble ... not so cool
+/*{feria.enCurso&&
+                <NavLink class ='container-fluid btn btn-block ' to='/Ferias' style={{cursor: 'default', padding: '0px',border: 'none',}}>
+                  <img role='presentation' src='https://firebasestorage.googleapis.com/v0/b/mico-62a9a.appspot.com/o/contenidos%2FbubleMesage3.png?alt=media&token=5aba160b-bb68-4362-9582-8f9c6f29ebc2}'  class ='img-rounded' style ={{maxHeight: '200px', width : '100%',minHeight: '151px', display : 'block',
+                  }} >
+                  </img>
+                  <div class = 'carousel-caption' style = {{color :'black',top: 30}}>
+                    <h3  style = {{textAlign :'center',borderRadius:'4px', padding: '0px',marginTop : 0,marginBottom : 0, overflow: 'hidden'}}>ahora estamos en {feria.nombre}</h3>
+                    <h3  style = {{textAlign :'center',borderRadius:'4px', padding: '0px',marginTop : 5,marginBottom : 0, overflow: 'hidden'}} >!ven a visitarnos!</h3>
+                  </div>
+                </NavLink>
 
+              }
+*/

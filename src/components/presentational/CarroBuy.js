@@ -6,7 +6,7 @@ export default class CarroBuy extends Component {
   render() {
     console.log ('subtotal: '+this.props.subTotal)
     return (
-      <div class ='row container-fluid' style={{padding :4, paddingRight:10,top: 0, bottom:0, position:'fixed',overflowY:'scroll', overflowX:'hidden', borderLeftStyle:'ridge' }}>
+      <div class ='row container-fluid' style={{padding :4, paddingRight:10,top: 0, bottom:142, position:'fixed',overflowY:'scroll', overflowX:'hidden' }}>
         <div class ='row container-fluid' style={{marginTop:'60px'}}>
           <div class='container-fluid col-xs-12 col-sm-12 col-md-12 col-lg-6' >
             <div class ='row '>

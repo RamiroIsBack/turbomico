@@ -33,9 +33,18 @@ class CarroContainer extends Component {
   QttyToggle(indice,qtty){
     this.props.changeQtty(indice,qtty)
   }
+
   goToCreaciones(event){
-    let tipo = this.props.productToCart.cartList[this.props.productToCart.cartList.length-1].tipo
-    this.props.moveToCreacionesSection(tipo)
+    let tipo = ''
+    // in case there is nothing in the cart
+    if(this.props.productToCart.cartList.length!=0){
+      tipo = this.props.productToCart.cartList[this.props.productToCart.cartList.length-1].tipo
+    }
+    if(tipo!=''){
+      this.props.moveToCreacionesSection(tipo)
+    }else{
+      this.props.moveToCreacionesSection('allCreaciones')
+    }
   }
 
   render() {
@@ -70,10 +79,30 @@ class CarroContainer extends Component {
     return (
       <div>
         <div class='container-fluid col-xs-7 col-sm-8 col-md-7 col-lg-6' style={{padding: 0}}>
+          <div class='visible-xs-block hidden-sm hidden-md hidden-lg' style={{padding :0 , borderRightStyle:'ridge',minHeight: 980}}>
+            {this.props.productToCart.cartList.length == 0 &&
+              <h2>
+                No tienes nungun producto en el carro para comprar.
+              </h2>
+            }
+            {productList}
 
-          {productList}
-          <NavLink onClick ={this.goToCreaciones.bind(this)} to='/Diseños' class= 'btn center-block' style= {style.carroContainer.btnSeguirComprando}> seguir comprando  <h4  class = 'glyphicon glyphicon-hand-left'></h4>
-          </NavLink>
+            <NavLink onClick ={this.goToCreaciones.bind(this)} to='/Diseños' class= 'btn center-block' style= {style.carroContainer.btnSeguirComprando}> seguir comprando  <h4  class = 'glyphicon glyphicon-hand-left'></h4>
+            </NavLink>
+
+          </div>
+          <div class='hidden-xs' style={{padding :0 , borderRightStyle:'ridge',minHeight: 440}}>
+            {this.props.productToCart.cartList.length == 0 &&
+              <h2>
+                No tienes nungun producto en el carro para comprar.
+              </h2>
+            }
+            {productList}
+
+            <NavLink onClick ={this.goToCreaciones.bind(this)} to='/Diseños' class= 'btn center-block' style= {style.carroContainer.btnSeguirComprando}> seguir comprando  <h4  class = 'glyphicon glyphicon-hand-left'></h4>
+            </NavLink>
+
+          </div>
         </div>
         <div class=' col-xs-5 col-sm-4 col-md-5 col-lg-6'>
           <CarroBuy carroPropiedades = {this.props.productToCart} postVentaContenido={postVentaContenido} pedidoContenido ={pedidoContenido}/>

@@ -13,9 +13,11 @@ const database =firebase.database()
 const DBferias = database.ref('ferias/')
 const DBcreaciones = database.ref('creaciones/')
 const DBcontenidos = database.ref('contenidos/')
+const DBenlaces = database.ref('enlaces/')
 var listCreaciones = []
 var listFerias =[]
 var listContenidos = []
+var listEnlaces = []
 
 const getCreaciones = (params, actionType) => {
   return dispatch => DBcreaciones.once('value')
@@ -85,17 +87,34 @@ const getContenidos = (params, actionType) => {
     })
 }
 
+const getEnlaces = (params, actionType) => {
+  return dispatch => DBenlaces.once('value')
+    .then(snapshot => {
+      snapshot.forEach(function(childSnapshot){
+        const valor = childSnapshot.val()
+        valor.id = childSnapshot.key
+        listEnlaces.push(valor)
+      })
+      if (actionType != null){
+        dispatch({
+          type: actionType,
+          params: params, // can be null
+          data: listEnlaces, // list with all d objects
+        })
+      }
+
+      return snapshot.val()
+    })
+    .catch(err => {
+      throw err
+    })
+}
+
 
 export default {
   getFerias: getFerias,
   getCreaciones: getCreaciones,
   getContenidos: getContenidos,
-  /* getContenidosLogin: getContenidosLogin,
-  getContenidosArtesania: getContenidosArtesania,
-  getContenidosConocenos: getContenidosConocenos,
-  getContenidosMico: getContenidosMico,
-  getContenidosPedido: getContenidosPedido,
-  getContenidosPostVenta: getContenidosPostVenta,
-  getContenidosFerias: getContenidosFerias,
-  getContenidosCreaciones: getContenidosCreaciones,*/
+  getEnlaces: getEnlaces,
+
 }
