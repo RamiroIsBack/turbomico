@@ -10,6 +10,7 @@ export default {
       fontSize: '20px',
     },
     btnPedido:{
+<<<<<<< HEAD
       //textAlign :'center',
       fontSize: '13px',
       fontWeight: 'bold',
@@ -18,6 +19,15 @@ export default {
       marginRight: '5px',
       whiteSpace: 'initial',
       color : 'white'
+=======
+      textAlign :'center',
+      fontSize: '13px',
+      fontWeight: 'bold',
+      backgroundColor: 'black',
+      width : '90%',
+      marginRight: '5px',
+
+>>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
     },
 
   },
@@ -43,16 +53,26 @@ export default {
       display : 'inline-block',
       padding: '0px',
       border: '1px solid #2C6549',
+<<<<<<< HEAD
       borderRadius:'10px',
     },
     /*cover: {
+=======
+      borderRadius:'10px'
+    },
+    cover: {
+>>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
       //backgroundPosition: 'center',
       //backgroundSize: 'cover',
       //backgroundRepeat: 'no-repeat',
       maxWidth: 290,
       maxHeight: 200,
       borderRadius:'10px'
+<<<<<<< HEAD
     },*/
+=======
+    },
+>>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
     footName:{
       marginTop : '1px',
       marginLeft : '10px',
@@ -88,7 +108,26 @@ export default {
       //marginTop:6,
       //borderBottom: '1px solid'
     },
+<<<<<<< HEAD
     
+=======
+    headlineContainer:{
+      //marginTop: 50,
+      //marginBottom: 20,
+      //paddingRight: 30,
+      paddingTop: 60,
+      paddingBottom: 50,
+      backgroundImage: 'url(https://firebasestorage.googleapis.com/v0/b/mico-62a9a.appspot.com/o/contenidos%2FbacklineFeria4.png?alt=media&token=30b4db56-d8d6-4aa0-8f18-439664171d36)',
+      backgroundPosition: 'right bottom',
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat',
+      opacity: 0.8,
+      overflow: 'auto',
+      borderRadius: '5px',
+      maxWidth: 1600,
+
+    },
+>>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
     mapsLink:{
 
       paddingRight: 5,
@@ -174,12 +213,17 @@ export default {
     btnRegistrarse: {
       fontSize: '19px',
       backgroundColor: 'black',
+<<<<<<< HEAD
       color:'white',
       width: '95%',
       marginLeft: 10,
     },
     btnNewsletter: {
       textDecoration:'none',
+=======
+    },
+    btnNewsletter: {
+>>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
       cursor: 'pointer',
       padding: '2px',
       border: 'none',

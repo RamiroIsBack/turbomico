@@ -4,9 +4,12 @@ var initialState = {
 
   listaContenidos: [],
   ContenidosLoaded :false ,
+<<<<<<< HEAD
   startHomeOpacity : false,
   stopHomeOpacity:false,
   homeOpacity: 0
+=======
+>>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
 
 }
 
@@ -20,6 +23,7 @@ export default (state = initialState, action) => {
     let list = action.data
 
     newState['listaContenidos'] = list
+<<<<<<< HEAD
     newState['startHomeOpacity'] = true
     return newState
 
@@ -31,6 +35,8 @@ export default (state = initialState, action) => {
     }
     newState['homeOpacity'] = homeOpacity
 
+=======
+>>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
     return newState
 
   /*case constants.MOVETO_FERIA_SECTION:

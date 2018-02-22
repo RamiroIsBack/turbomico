@@ -2,6 +2,7 @@ import constants from '../constants'
 //the brogrammer i'm following calls copy to d text inside a webpage so do I now :P
 var initialState = {
   registrarseShowing :false ,
+<<<<<<< HEAD
   creacionesShowing : false,
   feriasShowing : false,
   menuXsShowing : false,
@@ -11,6 +12,8 @@ var initialState = {
   realizarCompraShowing: false,
 
   submodalWarning: '',
+=======
+>>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
 }
 
 export default (state = initialState, action) => {
@@ -22,6 +25,7 @@ export default (state = initialState, action) => {
     if (action.data == 'closeRegistrarse'){
       newState['registrarseShowing'] = false
     }
+<<<<<<< HEAD
     else if (action.data == 'openRegistrarse'){
       newState['registrarseShowing'] = true
     }
@@ -81,6 +85,14 @@ export default (state = initialState, action) => {
     }else if(action.data == 'closeRealizarCompra'){
       newState['realizarCompraShowing'] = false
     }
+=======
+    if (action.data == 'openRegistrarse'){
+      newState['registrarseShowing'] = true
+    }
+
+    //desde
+    console.log (' from reducer TOGGLE_MODAL: ' +JSON.stringify(action.data) + 'registrarseShowing: '+ newState.registrarseShowing)
+>>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
 
     return newState
 

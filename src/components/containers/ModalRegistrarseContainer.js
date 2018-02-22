@@ -3,12 +3,16 @@ import {ModalRegistrarse} from '../presentational'
 
 import {connect} from 'react-redux'
 import actions from '../../actions'
+<<<<<<< HEAD
 import history from '../../utils/history'
 
+=======
+>>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
 
 
 class ModalRegistrarseContainer extends Component {
 
+<<<<<<< HEAD
 
   subirNuevoAmigo(user ){
     //TODO: log this new amigo to d DB
@@ -54,11 +58,25 @@ class ModalRegistrarseContainer extends Component {
 
     this.props.toggleModal('closeRegistrarse')
 
+=======
+  componentDidMount() {
+
+    if (this.props.storeContenidos.ContenidosLoaded == false){
+      //en la accion ya lo pone a true
+      this.props.getContenidos()
+    }
+  }
+
+  subirNuevoAmigo(amigo ){
+    //TODO: log this new amigo to d DB
+    console.log('soy tu nuevo amigo!!!!!!!'+JSON.stringify(amigo))
+>>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
   }
 
   toggleModal(){
     this.props.toggleModal('closeRegistrarse')
   }
+<<<<<<< HEAD
 
   comprobarNombre(nombre){
     var listaUsers = []
@@ -78,6 +96,11 @@ class ModalRegistrarseContainer extends Component {
   render(){
     var registrarseShowing = false
     var registrarseContenidos = {}
+=======
+  render(){
+    var registrarseShowing = false
+    var RegistrarseContenido = {}
+>>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
 
     if (this.props.storeModal){
       registrarseShowing = this.props.storeModal.registrarseShowing
@@ -89,7 +112,11 @@ class ModalRegistrarseContainer extends Component {
     for (let i = 0 ; i < this.props.storeContenidos.listaContenidos.length ; i++) {
 
       if (this.props.storeContenidos.listaContenidos[i].id == 'registrarse'){
+<<<<<<< HEAD
         registrarseContenidos = this.props.storeContenidos.listaContenidos[i]
+=======
+        RegistrarseContenido = this.props.storeContenidos.listaContenidos[i]
+>>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
         break
       }
     }
@@ -99,7 +126,11 @@ class ModalRegistrarseContainer extends Component {
     return (
 
       <div>
+<<<<<<< HEAD
         <ModalRegistrarse entrarConGoogle = {this.entrarConGoogle.bind(this)} entrarConFacebook = {this.entrarConFacebook.bind(this)} show={registrarseShowing} subirNuevoAmigo={this.subirNuevoAmigo.bind(this)} onClose={this.toggleModal.bind(this)} contenido = {registrarseContenidos} comprobarNombre = {this.comprobarNombre.bind(this)}>
+=======
+        <ModalRegistrarse show={registrarseShowing} subirNuevoAmigo={this.subirNuevoAmigo.bind(this)} onClose={this.toggleModal.bind(this)} contenido = {RegistrarseContenido}>
+>>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
         </ModalRegistrarse>
 
 
@@ -113,6 +144,7 @@ class ModalRegistrarseContainer extends Component {
 const dispatchToProps = (dispatch) =>{
 
   return{
+<<<<<<< HEAD
 
 
     getContenidos: () => dispatch(actions.getContenidos()),
@@ -123,6 +155,10 @@ const dispatchToProps = (dispatch) =>{
     loginFacebook:() =>dispatch(actions.loginFacebook()),
     loadCarro:(carro,justLogedIn)=>dispatch(actions.loadCarro(carro,justLogedIn)),
 
+=======
+    getContenidos: () => dispatch(actions.getContenidos()),
+    toggleModal: (modalName) =>dispatch(actions.toggleModal(modalName)),
+>>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
   }
 }
 
@@ -135,9 +171,12 @@ const stateToProps = (state) => {
     //y tu le asignas una key q quieras
     storeContenidos: state.contenidos,
     storeModal:state.modal,
+<<<<<<< HEAD
     users: state.user,
     carro:state.carro
 
+=======
+>>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
 
   }
 }
