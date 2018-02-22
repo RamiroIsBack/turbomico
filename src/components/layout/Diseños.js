@@ -12,13 +12,8 @@ export default class Diseños extends Component {
     //console.log ('caca '+ FotoContainer)
 
     return (
-<<<<<<< HEAD
       <div className='container-fluid' id ='backgroundDiv' style= {{padding: 0 }}>
         <div className='container-fluid' id ='containerDiv' style ={style.universal.containerDiv}>
-=======
-      <div class='container-fluid' id ='backgroundDiv'>
-        <div class='container-fluid' id ='containerDiv' style ={style.universal.containerDiv}>
->>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
           <FotoContainer/>
         </div>
       </div>

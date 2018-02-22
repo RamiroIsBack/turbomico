@@ -1,11 +1,7 @@
 import React, { Component } from 'react'
 import actions from '../../actions'
 import {connect} from 'react-redux'
-<<<<<<< HEAD
 import {Footer_css} from '../../utils'
-=======
-
->>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
 
 
 class FooterContainer extends Component {
@@ -15,14 +11,7 @@ class FooterContainer extends Component {
       //en la accion ya lo pone a true
       this.props.getEnlaces()
     }
-<<<<<<< HEAD
 
-=======
-    if (this.props.storeContenidos.ContenidosLoaded == false){
-      //en la accion ya lo pone a true
-      this.props.getContenidos()
-    }
->>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
   }
   moveUp(event){
     //make it start at the top of the page every time
@@ -32,12 +21,9 @@ class FooterContainer extends Component {
     let urlToGo= event.target.id
     window.open(urlToGo,'_blank')
   }
-<<<<<<< HEAD
   cierraDialogosNavbar(event){
     this.props.toggleModal('closeDropdowns')
   }
-=======
->>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
   render() {
     let contactMail = ''
     let contactHours= ''
@@ -72,19 +58,11 @@ class FooterContainer extends Component {
       }
     }
     return (
-<<<<<<< HEAD
       <div onClick = {this.cierraDialogosNavbar.bind(this)} >
         <button type='button' className='btn btn-primary glyphicon glyphicon-chevron-up' onClick = {this.moveUp.bind(this)}
           style={{backgroundColor: 'transparent', color: 'black',fontSize: 13,border:'none',padding:'2px', marginBottom:0}}> volver arriba</button>
         <div className='container'>
           <div className='container-fluid col-xs-12 col-sm-4 col-md-4 col-lg-4' style={{padding: 0}}>
-=======
-      <div style={{}}>
-        <button type='button' class='btn btn-primary glyphicon glyphicon-chevron-up' onClick = {this.moveUp.bind(this)}
-          style={{backgroundColor: 'transparent', color: 'black',fontSize: 13,border:'none',padding:'2px', marginBottom:0}}> volver arriba</button>
-        <div class='container' style={{backgroundColor: 'rgba(0,0,0,0.90)', width:'100%',height:140,}}>
-          <div class='container-fluid col-xs-4 col-sm-4 col-md-4 col-lg-4' style={{padding: 0}}>
->>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
             <p style={{color: 'white', textAlign:'center'}}>Contacta con Mico:</p>
             <div style={{textAlign:'center'}}>
               <a href={'mailto:' + contactMail} style={{color: 'white'}}>{contactMail}</a>
@@ -100,7 +78,6 @@ class FooterContainer extends Component {
             <p style={{color: 'white', textAlign:'center'}}>{contactHours}</p>
 
           </div>
-<<<<<<< HEAD
           <div className='container-fluid col-xs-6 col-sm-4 col-md-4 col-lg-4' style={{padding: 0}}>
             <p style={{color: 'white', textAlign:'center'}}>Síguenos en:</p>
 
@@ -109,21 +86,10 @@ class FooterContainer extends Component {
                 <div style={{marginLeft:5, marginBottom: 5, textAlign:'center',display: 'inline-block'}}>
                   <a style={{color: 'white', cursor: 'pointer',padding: '2px',border: 'none',borderRadius:'5px',}} id= {urlFacebook} onClick = {this.resdesSociales.bind(this)}>
                     <img role='presentation' src='https://firebasestorage.googleapis.com/v0/b/micotextil-3f024.appspot.com/o/facebookTrans.png?alt=media&token=f0f02332-86fc-4ccf-b89a-ad54a29a8c79' className ='footer__photo__link'  id= {urlFacebook}>
-=======
-          <div class='container-fluid col-xs-4 col-sm-4 col-md-4 col-lg-4' style={{padding: 0}}>
-            <p style={{color: 'white', textAlign:'center'}}>Síguenos en:</p>
-
-            <div class='container-fluid col-xs-6 col-sm-6 col-md-6 col-lg-6' style={{padding: 0}}>
-              { urlFacebook != 'no' &&
-                <div style={{marginLeft:5, marginBottom: 5, textAlign:'center'}}>
-                  <a style={{color: 'white', cursor: 'pointer',padding: '2px',border: 'none',borderRadius:'5px',}} id= {urlFacebook} onClick = {this.resdesSociales.bind(this)}>
-                    <img role='presentation' src='https://firebasestorage.googleapis.com/v0/b/mico-62a9a.appspot.com/o/contenidos%2Ffacebook.png?alt=media&token=508bbbec-b423-4d5d-85cf-f78df1015ae8' class ='img-rounded' style={{height:25}} id= {urlFacebook}>
->>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
                     </img> Facebook
                   </a>
                 </div>
               }
-<<<<<<< HEAD
 
             </div>
 
@@ -132,52 +98,17 @@ class FooterContainer extends Component {
                 <div style={{marginLeft:5, marginBottom: 5, textAlign:'center'}}>
                   <a style={{color: 'white', cursor: 'pointer',padding: '2px',border: 'none',borderRadius:'5px',}} id={urlInstagram} onClick = {this.resdesSociales.bind(this)}>
                     <img role='presentation' src='https://firebasestorage.googleapis.com/v0/b/micotextil-3f024.appspot.com/o/instaTrans.png?alt=media&token=a3d2eb00-a265-4836-b748-b4e9b7b0ff5d' className ='footer__photo__link' id='instagram'>
-=======
-              { urlTwiter != 'no' &&
-                <div style={{marginLeft:5, marginBottom: 5, textAlign:'center'}}>
-                  <a style={{color: 'white', cursor: 'pointer',padding: '2px',border: 'none',borderRadius:'5px',}} id={urlTwiter} onClick = {this.resdesSociales.bind(this)}>
-                    <img role='presentation' src='https://firebasestorage.googleapis.com/v0/b/mico-62a9a.appspot.com/o/contenidos%2Ftwitter.png?alt=media&token=b566b49b-3a32-4f50-a284-b7b2e1e5eed8' class ='img-rounded' style={{height:25}} id='twiter'>
-                    </img> Twiter
-                  </a>
-                </div>
-
-              }
-            </div>
-
-            <div class='container-fluid col-xs-6 col-sm-6 col-md-6 col-lg-6' style={{padding: 0}}>
-              { urlInstagram != 'no' &&
-                <div style={{marginLeft:5, marginBottom: 5, textAlign:'center'}}>
-                  <a style={{color: 'white', cursor: 'pointer',padding: '2px',border: 'none',borderRadius:'5px',}} id={urlInstagram} onClick = {this.resdesSociales.bind(this)}>
-                    <img role='presentation' src='https://firebasestorage.googleapis.com/v0/b/mico-62a9a.appspot.com/o/contenidos%2Finstagram.png?alt=media&token=17519e4b-9580-4d64-a4e2-8a8790ed3147' class ='img-rounded' style={{height:25}} id='instagram'>
->>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
                     </img> Instagram
                   </a>
                 </div>
               }
-<<<<<<< HEAD
 
-=======
-              { urlYoutube != 'no' &&
-
-                <div style={{marginLeft:5, marginBottom: 5, textAlign:'center'}}>
-                  <a style={{color: 'white', cursor: 'pointer',padding: '2px',border: 'none',borderRadius:'5px',}} id={urlYoutube} onClick = {this.resdesSociales.bind(this)}>
-                    <img role='presentation' src='https://firebasestorage.googleapis.com/v0/b/mico-62a9a.appspot.com/o/contenidos%2Fyoutube.png?alt=media&token=25fcd87b-de30-4111-b503-b6eb387cd996' class ='img-rounded' style={{height:25}} id='youtube'>
-                    </img> Youtube
-                  </a>
-                </div>
-              }
->>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
             </div>
 
 
           </div>
-<<<<<<< HEAD
           <div className='container-fluid col-xs-6 col-sm-4 col-md-4 col-lg-4' style={{padding: 0,}}>
             <p className='text-muted pull-right' style={{color: 'white', textAlign:'center'}}>© 2011 Mico diseño textil </p>
-=======
-          <div class='container-fluid col-xs-4 col-sm-4 col-md-4 col-lg-4' style={{padding: 0}}>
-            <p class='text-muted pull-right' style={{color: 'white', textAlign:'center'}}>© 2011 Mico Creaciones </p>
->>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
           </div>
 
         </div>
@@ -193,10 +124,7 @@ const dispatchToProps = (dispatch) =>{
     //pay: (cartList) =>dispatch(actions.pay(cartList))
     getEnlaces:()=>dispatch(actions.getEnlaces()),
     getContenidos:()=>dispatch(actions.getContenidos()),
-<<<<<<< HEAD
     toggleModal: (modalName) =>dispatch(actions.toggleModal(modalName)),
-=======
->>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
   }
 }
 

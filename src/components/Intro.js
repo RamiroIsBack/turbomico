@@ -11,9 +11,6 @@ import {
   Link,
 } from 'react-router-dom'
 import registerServiceWorker from './registerServiceWorker'
-/* The Elements components is a summary of basic presentation componets
- * available for use in this theme
- */
 
 class ReactMico extends Component {
 

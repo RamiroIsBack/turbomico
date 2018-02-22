@@ -1,6 +1,5 @@
 {
-<<<<<<< HEAD
-  "name": "newTurboMico",
+  "name": "turbomico",
   "version": "0.0.0",
   "server": false,
   "private": true,
@@ -14,47 +13,11 @@
     "bluebird": "latest",
     "debug": "latest",
     "dotenv": "latest",
-    "express": "^4.16.2",
     "moment": "latest",
-    "morgan": "^1.9.0",
-    "nodemailer": "^4.5.0",
-    "nodemon": "latest",
-    "paypal-checkout": "^4.0.178",
-=======
-  "name": "turbomico",
-  "version": "0.0.0",
-  "private": true,
-  "server": true,
-  "scripts": {
-    "clean": "rm -rf ./dist",
-    "build": "npm run clean && NODE_ENV=production webpack && gulp prod",
-    "postinstall": "npm run build",
-    "start": "node server"
-  },
-  "dependencies": {
-    "bluebird": "latest",
-    "body-parser": "latest",
-    "cheerio": "latest",
-    "client-sessions": "latest",
-    "cookie-parser": "latest",
-    "debug": "latest",
-    "dotenv": "latest",
-    "express": "latest",
-    "file-loader": "latest",
-    "firebase": "^4.1.3",
-    "history": "^4.6.3",
-    "hjs": "latest",
-    "hogan-middleware": "latest",
-    "jsonwebtoken": "latest",
-    "moment": "latest",
-    "mongoose": "latest",
-    "morgan": "latest",
->>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
     "react": "latest",
     "react-bootstrap": "latest",
     "react-dom": "latest",
     "react-dropzone": "latest",
-<<<<<<< HEAD
     "react-google-maps": "^9.4.5",
     "react-image-magnify": "^2.5.0",
     "react-redux": "latest",
@@ -65,57 +28,37 @@
     "redux-thunk": "latest",
     "superagent": "latest",
     "turbo360": "latest",
+    "morgan": "^1.9.0",
+    "nodemailer": "^4.5.0",
+    "nodemon": "latest",
+    "paypal-checkout": "^4.0.178",
     "vertex360": "latest"
-=======
-    "react-redux": "latest",
-    "react-router-dom": "^4.1.1",
-    "react-time": "latest",
-    "redux": "latest",
-    "redux-thunk": "latest",
-    "serve-favicon": "latest",
-    "stripe": "latest",
-    "superagent": "latest",
-    "turbo360": "latest",
-    "webpack": "latest",
-    "webpack-dev-server": "^2.5.0"
->>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
   },
   "devDependencies": {
-    "babel-core": "latest",
-    "babel-loader": "latest",
-<<<<<<< HEAD
-=======
-    "babel-plugin-react-html-attrs": "^2.0.0",
->>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
-    "babel-preset-es2015": "latest",
-    "babel-preset-react": "latest",
-    "chai": "latest",
-    "chai-http": "latest",
-<<<<<<< HEAD
     "css-loader": "^0.23.1",
+    "style-loader": "^0.13.0",
     "eslint": "^4.18.1",
     "eslint-plugin-react": "^7.7.0",
-=======
->>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
+    "babel-core": "latest",
+    "babel-loader": "latest",
+    "babel-preset-es2015": "latest",
+    "babel-preset-react": "latest",
+    "json-loader": "latest",
     "gulp": "latest",
-    "gulp-6to5": "latest",
     "gulp-autoprefixer": "latest",
+    "gulp-6to5": "latest",
     "gulp-concat": "latest",
     "gulp-less": "latest",
     "gulp-minify-css": "latest",
     "gulp-rename": "latest",
-<<<<<<< HEAD
-    "gulp-sass": "latest",
-=======
->>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
     "gulp-uglify": "latest",
-    "json-loader": "latest",
+    "gulp-sass": "latest",
+    "chai": "latest",
+    "chai-http": "latest",
     "mocha": "latest",
     "mocha-jscs": "latest",
-<<<<<<< HEAD
     "mocha-jshint": "latest",
     "rimraf": "latest",
-    "style-loader": "^0.13.0",
     "webpack": "latest"
   },
   "app": "TURBO_APP_ID",
@@ -123,12 +66,4 @@
     "."
   ],
   "format": "vertex"
-=======
-    "mocha-jshint": "latest"
-  },
-  "deploy": [
-    "index.html",
-    "dist"
-  ]
->>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
 }

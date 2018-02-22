@@ -1,19 +1,12 @@
 import Conocenos from './Conocenos'
 import ModalRegistrarse from './ModalRegistrarse'
-<<<<<<< HEAD
 import Foto from './Foto'
 import Product from './Product'
 import MagnifyingProduct from './MagnifyingProduct'
-=======
-import Sidebar from './Sidebar'
-import Foto from './Foto'
-import Product from './Product'
->>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
 import ProductSpecification from './ProductSpecification'
 import CarroBuy from './CarroBuy'
 import CarroProduct from './CarroProduct'
 import Feria from './Feria'
-<<<<<<< HEAD
 import ModalFerias from './ModalFerias'
 import ModalCreaciones from './ModalCreaciones'
 import ModalMenuXs from './ModalMenuXs'
@@ -52,20 +45,10 @@ export{
   ModalFerias,
   ModalRegistrarse,
   Foto,
-=======
-export{
-  Conocenos,
-  ModalRegistrarse,
-  Foto,
-  Sidebar,
->>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
   Product,
   ProductSpecification,
   CarroBuy,
   CarroProduct,
   Feria,
-<<<<<<< HEAD
   MagnifyingProduct,
-=======
->>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
 }

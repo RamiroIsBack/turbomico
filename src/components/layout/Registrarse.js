@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 /*import React, { Component } from 'react'
-=======
-import React, { Component } from 'react'
->>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
 import style from './styles'
 import {RegistrarseContainer} from '../containers'
 import {Modal} from '../presentational'
@@ -36,8 +32,4 @@ export default class Registrarse extends Component {
       </div>
     )
   }
-<<<<<<< HEAD
 }*/
-=======
-}
->>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0

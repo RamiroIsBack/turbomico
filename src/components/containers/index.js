@@ -1,12 +1,7 @@
-<<<<<<< HEAD
-
 import AmigoContainer from './AmigoContainer'
 import AmigoPedidosContainer from './AmigoPedidosContainer'
 import AmigoDatosContainer from './AmigoDatosContainer'
 import AmigoNavContainer from './AmigoNavContainer'
-=======
-import Users from './Users'
->>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
 import NavbarMicoFront from './NavbarMicoFront'
 import ModalRegistrarseContainer from './ModalRegistrarseContainer'
 import HomeContainer from './HomeContainer'
@@ -16,7 +11,6 @@ import CarroContainer from './CarroContainer'
 import FeriaContainer from './FeriaContainer'
 import ContactoContainer from './ContactoContainer'
 import ConocenosContainer from './ConocenosContainer'
-<<<<<<< HEAD
 
 import FooterContainer from './FooterContainer'
 import ModalFeriasContainer from './ModalFeriasContainer'
@@ -42,29 +36,14 @@ export{
   ModalCreacionesContainer,
   ModalFeriasContainer,
   FooterContainer,
-
+  
   HomeContainer,
   ModalRegistrarseContainer,
-=======
-import RegistrarseContainer from './RegistrarseContainer'
-import ContenidoFeriaContainer from './ContenidoFeriaContainer'
-import FooterContainer from './FooterContainer'
-export {
-  FooterContainer,
-  ContenidoFeriaContainer,
-  HomeContainer,
-  ModalRegistrarseContainer,
-  RegistrarseContainer,
->>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
   ConocenosContainer,
   ContactoContainer,
   NavbarMicoFront,
   FotoContainer,
-<<<<<<< HEAD
   AmigoContainer,
-=======
-  Users,
->>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
   ProductContainer,
   CarroContainer,
   FeriaContainer

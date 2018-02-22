@@ -8,7 +8,6 @@ class ModalRegistrarse extends React.Component {
   constructor() {
     super()
     this.state = {
-<<<<<<< HEAD
       show: 'no',
       nombreCorrect:false,
       emailCorrect:false,
@@ -113,36 +112,12 @@ class ModalRegistrarse extends React.Component {
   }
   handleFLogin(){
     this.props.entrarConFacebook()
-=======
-
-      recibir: true,
-    }
-  }
-
-  handleChange(event){
-    this.setState({recibir: !this.state.recibir})
-  }
-  handleImputData(event){
-
-    ///////////////////////////////////////////////////////////////////////////////////////////////////
-    //TODO: hacer q meta bien los datos, no dejar pasar ni una!!
-    //con acciones que lancen alerts con timeOut??
-    ///////////////////////////////////////////////////////////////////////////////////////////////////
-    let amigo ={
-      nombre: document.getElementById('nombre').value,
-      mail: document.getElementById('contactMail').value,
-      password: document.getElementById('password').value,
-      newsletter: this.state.recibir
-    }
-    this.props.subirNuevoAmigo(amigo)
->>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
   }
   render() {
     // Render nothing if the 'show' prop is false
     if(!this.props.show) {
       return null
     }
-<<<<<<< HEAD
     let contenido ={}
     let registrarseInfo =''
     let registrarseTitulo = ''
@@ -156,12 +131,6 @@ class ModalRegistrarse extends React.Component {
     var stiloModal ={
       position: 'absolute',
       //backgroundImage: 'url(' + contenido.pic.urlPicRegistrarse + ')',
-=======
-    let contenido = this.props.contenido
-    var stiloModal ={
-      position: 'absolute',
-      backgroundImage: 'url(' + contenido.pic.urlPicRegistrarse + ')',
->>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
       //borderRadius: 10,
       backgroundPosition: 'center',
       backgroundSize: 'cover',
@@ -173,22 +142,15 @@ class ModalRegistrarse extends React.Component {
       //To make sure that it is really on top of all other elements, we set z-index to a high value (by default all elements have a z-index value of 0).
       zIndex: 6668,
       top: '60px',
-<<<<<<< HEAD
       left: '20px',
       right: '20px',
       bottom: '20px',
-=======
-      left: '40px',
-      right: '40px',
-      bottom: '40px',
->>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
       //border                     : '1px solid #ccc',
       overflow: 'auto',
       WebkitOverflowScrolling: 'touch',
       borderRadius: '5px',
       outline: 'none',
     }
-<<<<<<< HEAD
     ///////     Tessting cos d background sometimes doesnt charge on time
     if (contenido.pic){
       stiloModal.backgroundImage ='url(' + contenido.pic.urlPicRegistrarse + ')'
@@ -255,27 +217,21 @@ class ModalRegistrarse extends React.Component {
 
     //setting the news letter to yes or no
 
-=======
->>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
     var sino = 'Sí'
     var newsletter = 'glyphicon glyphicon-ok text-center pull-right'
     if (!this.state.recibir){
       newsletter = 'glyphicon glyphicon-remove text-center pull-right'
       sino = 'No'
     }
-<<<<<<< HEAD
     var loginGIcon='https://firebasestorage.googleapis.com/v0/b/micotextil-3f024.appspot.com/o/login%20gplus.png?alt=media&token=3bb269b6-fae5-4c0f-99b0-666f4388e494'
     var loginFIcon='https://firebasestorage.googleapis.com/v0/b/micotextil-3f024.appspot.com/o/fb_icon_325x325.png?alt=media&token=f82e3369-9844-4929-a8f8-af1faa665624'
 
-=======
->>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
     return (
       <div style={style.modal.backdropStyle}>
 
         <div style={stiloModal}>
 
           <div >
-<<<<<<< HEAD
             <button onClick={this.props.onClose} className = 'btn glyphicon glyphicon-remove pull-right'
               style= {style.modal.btnClose}></button>
             <div className = 'col-xs-10 col-sm-8 col-md-8 col-lg-8' style = {style.modal.formContainer}>
@@ -453,60 +409,6 @@ class ModalRegistrarse extends React.Component {
                 </div>
               </div>
 
-=======
-            <button onClick={this.props.onClose} class = 'btn glyphicon glyphicon-remove pull-right'
-              style= {style.modal.btnClose}></button>
-            <div class = 'col-xs-10 col-sm-8 col-md-8 col-lg-8' style = {style.modal.formContainer}>
-              <div >
-                <h3 class='text-center'>{contenido.descripcion.registrarseTitulo}</h3>
-                <hr/>
-              </div>
-              <div >
-                <div >
-                  <div class='form-group row'>
-                    <div class='col-sm-3'>
-                      <p>nombre*</p>
-                    </div>
-                    <div class='col-sm-9'>
-                      <textarea type='text' rows='1' class='form-control' id='nombre' placeholder='¿Cómo te llamas?' ></textarea>
-                    </div>
-                  </div>
-                  <div class='form-group row'>
-                    <div class='col-sm-3'>
-                      <p>e-mail*</p>
-                    </div>
-                    <div class='col-sm-9'>
-                      <textarea type='e-mail' rows='1' class='form-control' id='contactMail' placeholder='nuevo.amigo.de.mico@micomail.com' ></textarea>
-                    </div>
-                  </div>
-                  <div class ='form-group row' >
-                    <div class='col-sm-3'>
-                      <p>contraseña*</p>
-                    </div>
-                    <div class='col-sm-9' >
-                      <textarea type='password' rows='1' class='form-control' id ='password' placeholder='introduce al menos 6 caracteres'></textarea>
-                    </div>
-                  </div>
-                  <div class='form-group row'>
-                    <div class='col-sm-2'>
-                      <a class ={newsletter} id ='si' onClick={this.handleChange.bind(this)} style= {style.modal.btnNewsletter}></a>
-                    </div>
-                    <div class='col-sm-10'>
-                      <p>{sino} quiero recibir información por e-mail</p>
-                    </div>
-
-                  </div>
-                  <p class= 'text-muted'>(nunca mandamos spam ni publicidad)</p>
-                  <div class='form-group row'>
-                    <button onClick={this.handleImputData.bind(this)} class='btn btn-success text-center form-control ' style = {style.modal.btnRegistrarse} >Registrarse</button>
-                  </div>
-                </div>
-              </div>
-              <div class='col-sm-10 text-center'>
-                {contenido.descripcion.registrarseInfo.split('\n').map((item, key) => {
-                  return <span key={key}>{item}<br/></span>})}
-              </div>
->>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
             </div>
           </div>
         </div>

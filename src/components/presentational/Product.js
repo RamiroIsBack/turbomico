@@ -3,7 +3,6 @@ import { NavLink} from 'react-router-dom'
 import style from './styles'
 
 export default class Product extends Component {
-<<<<<<< HEAD
   constructor(args){
     super()
     this.state ={
@@ -50,14 +49,10 @@ export default class Product extends Component {
 
     }
   }
-=======
-
->>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
   handleClick(){
     this.props.whenClicked(this.props.propiedades)
   }
 
-<<<<<<< HEAD
   mueve(event){
     console.log('mueve '+event)
     console.log(event.clientX)
@@ -90,21 +85,6 @@ export default class Product extends Component {
           <p className='card-text'>{this.props.propiedades.descripcion}</p>
           <NavLink to='/Carro' type='button' className='btn btn-success list-inline' style= {style.carroProduct.btnPedido} onClick={this.handleClick.bind(this)} draggable = 'false'>
             <li className='glyphicon glyphicon-shopping-cart'>
-=======
-  render() {
-    let url = this.props.propiedades.pic
-
-    return (
-      <div class='card '>
-        <NavLink to='/Carro' onClick={this.handleClick.bind(this)}>
-          <img class='card-img-top' src={url} alt='Card image cap' style={style.product}/>
-        </NavLink>
-        <div class='card-block'>
-          <h4 class='card-title'>{this.props.propiedades.nombre}</h4>
-          <p class='card-text'>{this.props.propiedades.descripcion}</p>
-          <NavLink to='/Carro' type='button' class='btn btn-success list-inline' style= {style.carroProduct.btnPedido} onClick={this.handleClick.bind(this)}>
-            <li class='glyphicon glyphicon-shopping-cart'>
->>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
             </li>
             <li><h4>Añadir al carro</h4></li>
           </NavLink>

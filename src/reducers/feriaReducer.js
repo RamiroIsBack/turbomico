@@ -5,18 +5,14 @@ var initialState = {
   listaFerias: [],
   FeriasLoaded :false ,
   feriaSectionSelected : 'allFerias',
-<<<<<<< HEAD
   idFeriaShowing : '',
   openYear: '',
-=======
->>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
 }
 
 export default (state = initialState, action) => {
   let newState = Object.assign({}, state)
   switch (action.type) {
 
-<<<<<<< HEAD
   case constants.TOGGLE_YEAR://action.data= id de feria selected
 
     newState['openYear'] = action.data
@@ -36,8 +32,6 @@ export default (state = initialState, action) => {
 
     return newState
 
-=======
->>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
   case constants.FERIAS_RECEIVED:
 
     newState['FeriasLoaded'] = true
@@ -53,23 +47,16 @@ export default (state = initialState, action) => {
         return a[i]>b[i] ? 1 : a[i]<b[i] ? -1 : 0
       })
     }
-<<<<<<< HEAD
 
     //lo paso a formato yyyy/mm/dd para poder operar con Date Object y miro a ver si est'a en curso o est'a caducada
     let firstNoCaducada = true //flag to set the idFeriaShowing
 
-=======
-    //las ferias mas nuevas abajo (si cambio el 1 y el -1 seria al reves)
-
-    //lo paso a formato yyyy/mm/dd para poder operar con Date Object y miro a ver si est'a en curso o est'a caducada
->>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
     for (let i = 0; i < list.length; i++) {
       let date = list[i].fecha
       let parts = date.split('/')
       //                       year        month         day
       let feriaDate = new Date(parts[2], parts[1] - 1, parts[0])
 
-<<<<<<< HEAD
       //ahora con la fecha final
       let parts2 = list[i].fechaFinal.split('/')
       //                             year        month         day
@@ -89,40 +76,20 @@ export default (state = initialState, action) => {
           list[i].showInfo = true
         }
       }
-=======
-      //calculo el final de la feria segun sus dias d duracion
-      let finalFeriaDate = feriaDate
-      finalFeriaDate = new Date(feriaDate.getFullYear(),feriaDate.getMonth(),feriaDate.getDate()+list[i].duracion)
-      list[i].fechaFinal = finalFeriaDate
-      let diaHoy = new Date()
-
->>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
       if (feriaDate < diaHoy && diaHoy < list[i].fechaFinal){
         list[i].enCurso = true
       }else{
         list[i].enCurso = false
       }
-<<<<<<< HEAD
-=======
-      if (finalFeriaDate < diaHoy){
-        list[i].caducada = true
-      }else{
-        list[i].caducada = false
-      }
->>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
     }
 
     newState['listaFerias'] = list
     return newState
 
   case constants.MOVETO_FERIA_SECTION:
-<<<<<<< HEAD
     if(action.data){
       newState['feriaSectionSelected'] = action.data
     }
-=======
-    newState['feriaSectionSelected'] = action.data
->>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
     return newState
 
   default:

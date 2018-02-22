@@ -1,6 +1,5 @@
 
 export default {
-<<<<<<< HEAD
   SELECT_FOTO:                        'SELECT_FOTO',
   PRODCUT_TO_CART:                    'PRODCUT_TO_CART',
   ERASE_PRODUCT:                      'ERASE_PRODUCT',
@@ -30,18 +29,4 @@ export default {
   ELEMENTO_VENDIDO:                   'ELEMENTO_VENDIDO',
   INCRISE_OPACITY:                    'INCRISE_OPACITY',
   MOVE_CAROUSELL:                     'MOVE_CAROUSELL'
-=======
-  SELECT_FOTO:              'SELECT_FOTO',
-  PRODCUT_TO_CART:          'PRODCUT_TO_CART',
-  ERASE_PRODUCT:            'ERASE_PRODUCT',
-  CHANGE_QTTY:              'CHANGE_QTTY',
-  CREACIONES_RECEIVED:      'CREACIONES_RECEIVED',
-  FERIAS_RECEIVED:          'FERIAS_RECEIVED',
-  CONTENIDOS_RECEIVED:      'CONTENIDOS_RECEIVED',
-  ENLACES_RECEIVED:         'ENLACES_RECEIVED',
-  MOVETO_FERIA_SECTION:     'MOVETO_FERIA_SECTION',
-  MOVETO_CREACION_SECTION:  'MOVETO_CREACION_SECTION',
-
-  TOGGLE_MODAL:               'TOGGLE_MODAL',
->>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
 }

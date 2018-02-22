@@ -1,7 +1,6 @@
 import constants from '../constants'
 
 var initialState = {
-<<<<<<< HEAD
   listaUsers: [],
   currentUser: null, // signed in user
   usersLoaded: false,
@@ -13,10 +12,6 @@ var initialState = {
     currentUserEmail: true,
     currentUserPassword: true,
   }
-=======
-  all: null,
-  currentUser: null // signed in user
->>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
 }
 
 export default (state = initialState, action) => {
@@ -24,7 +19,6 @@ export default (state = initialState, action) => {
 
   switch (action.type) {
 
-<<<<<<< HEAD
   case constants.CAMBIAR_CURRENT_USER_MODIFICABLE:
     //currentUserDatosEnvio, currentUserNombre , currentUserfoto en data -> true or false en params
     newState.currentUserDatos[action.data] = action.params
@@ -198,22 +192,6 @@ export default (state = initialState, action) => {
     return newState
   case constants.RESEND_EMAIL:
     return newState
-=======
-  case constants.CURRENT_USER_RECEIVED:
-    newState['currentUser'] = action.data
-    return newState
-
-  case constants.USERS_RECEIVED:
-    newState['all'] = action.data
-    return newState
-
-  case constants.USER_CREATED:
-    let array = (newState.all) ? Object.assign([], newState.all) : []
-    array.unshift(action.data)
-    newState['all'] = array
-    return newState
-
->>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
   default:
     return state
   }

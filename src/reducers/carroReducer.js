@@ -4,11 +4,7 @@ var initialState = {
   cartList:[],
   numProducts: 0,
   precioSubTotal : 0,
-<<<<<<< HEAD
   envio : 15,
-=======
-  envio : 0,
->>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
 }
 
 export default (state = initialState, action) => {
@@ -77,7 +73,6 @@ export default (state = initialState, action) => {
     console.log (' from reducer PRODCUT_TO_CART: ' +JSON.stringify(newState['cartList'][action.data.indice]))
     return newState
 
-<<<<<<< HEAD
   case constants.LOAD_CARRO:
     //se ha combinado con el de la base de datos el carro provisional de antes de logearse si lo habia
     //se ha cargado el carro de user
@@ -99,8 +94,6 @@ export default (state = initialState, action) => {
     }
     return newState
 
-=======
->>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
   default:
     return state
   }

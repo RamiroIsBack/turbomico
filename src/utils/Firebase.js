@@ -1,57 +1,36 @@
 import firebase from 'firebase'
 var config = {
-<<<<<<< HEAD
   apiKey: "AIzaSyAikVZnJteFavPRHv7M_Qiv-RIPyE0lrCM",
   authDomain: "micotextil-3f024.firebaseapp.com",
   databaseURL: "https://micotextil-3f024.firebaseio.com",
   projectId: "micotextil-3f024",
   storageBucket: "micotextil-3f024.appspot.com",
   messagingSenderId: "1069659429917"
-=======
-  apiKey: 'AIzaSyClcb4B5oRktWDQWGU8Ev4hgYm5p_NXgL4',
-  authDomain: 'mico-62a9a.firebaseapp.com',
-  databaseURL: 'https://mico-62a9a.firebaseio.com',
-  projectId: 'mico-62a9a',
-  storageBucket: 'mico-62a9a.appspot.com',
-  messagingSenderId: '307587845773'
->>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
 }
 firebase.initializeApp(config)
 const database =firebase.database()
 
-<<<<<<< HEAD
 var storage = firebase.storage()
 var storageRef =storage.ref()
 
 const providerGoogle = new firebase.auth.GoogleAuthProvider()
 
-=======
->>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
 const DBferias = database.ref('ferias/')
 const DBcreaciones = database.ref('creaciones/')
 const DBcontenidos = database.ref('contenidos/')
 const DBenlaces = database.ref('enlaces/')
-<<<<<<< HEAD
 const DBusers = database.ref('users/')
-=======
->>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
 var listCreaciones = []
 var listFerias =[]
 var listContenidos = []
 var listEnlaces = []
-<<<<<<< HEAD
 var currentUserUid='' //identificador del currentUser. Lo guardo al logear y lo uso si tengo q hacer cambios en sus datos
 var currentUserEmail=''
-=======
->>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
 
 const getCreaciones = (params, actionType) => {
   return dispatch => DBcreaciones.once('value')
     .then(snapshot => {
-<<<<<<< HEAD
       listCreaciones=[]
-=======
->>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
       snapshot.forEach(function(childSnapshot){
         const valor = childSnapshot.val()
         valor.id = childSnapshot.key
@@ -140,7 +119,6 @@ const getEnlaces = (params, actionType) => {
     })
 }
 
-<<<<<<< HEAD
 const getUsers = (params, actionType) => {//actionType=USERS_RECEIVED
   return dispatch => DBusers.once('value')
     .then(snapshot => {
@@ -1085,15 +1063,12 @@ const addUserInfo = (user,params, posibleFoto, actionType) => {
   }
 
 }
-=======
->>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
 
 export default {
   getFerias: getFerias,
   getCreaciones: getCreaciones,
   getContenidos: getContenidos,
   getEnlaces: getEnlaces,
-<<<<<<< HEAD
   getUsers: getUsers,
   userCreated: userCreated,
   addUserInfo:addUserInfo,
@@ -1109,7 +1084,4 @@ export default {
   guardarDatosPedido: guardarDatosPedido,
   vaciarCarro:vaciarCarro,
   elementoVendido:elementoVendido,
-=======
-
->>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
 }

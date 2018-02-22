@@ -1,5 +1,4 @@
 import constants from '../constants'
-<<<<<<< HEAD
 import { Firebase } from '../utils'
 import actions from './'
 
@@ -99,24 +98,6 @@ export default {
     return {
       type: constants.TOGGLE_MODAL,
       params: submodalName,
-=======
-import { TurboClient } from '../utils'
-import { Firebase } from '../utils'
-
-export default {
-
-  //info interesante -> https://github.com/reactjs/redux/issues/291
-
-  //intentando hacer una acion asincrona
-  //Redux Thunk middleware will give it  dispatch as an argument. It will also “swallow” such actions (firebase.getCreaciones does d async action)
-
-  //ALSO
-  //Fortunately, Redux Thunk offers you a way to read the current state of the Redux store. In addition to dispatch, it also passes getState as the second argument to the function you return from your thunk action creator
-
-  toggleModal: (modalName) => {
-    return {
-      type: constants.TOGGLE_MODAL,
->>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
       data: modalName,
     }
   },
@@ -127,17 +108,10 @@ export default {
       data: creacionTipo
     }
   },
-<<<<<<< HEAD
   moveToFeriasSection: (id)=>{
     return{
       type: constants.MOVETO_FERIA_SECTION,
       data: id
-=======
-  moveToFeriasSection: (feriaName)=>{
-    return{
-      type: constants.MOVETO_FERIA_SECTION,
-      data: feriaName
->>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
     }
 
   },
@@ -195,18 +169,12 @@ export default {
 
   },
   productToCart: (product) => {
-<<<<<<< HEAD
 
-=======
-    // key 'type' is mandatory after that, u can send whatever
-    //console.log ('PRODCUT_TO_CART action' + JSON.stringify(product))
->>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
     return {
       type: constants.PRODCUT_TO_CART,
       data: product
     }
 
-<<<<<<< HEAD
 
   },
   guardarDatosPedido:(datosEnvio,carro,paymentData) =>{
@@ -304,32 +272,4 @@ export default {
       return dispatch(Firebase.resendEmail(params, constants.RESEND_EMAIL))
     }
   },
-=======
-  },
-
-  fetchUsers: (params) => {
-    return dispatch => {
-      return dispatch(TurboClient.getRequest('user', params, constants.USERS_RECEIVED))
-    }
-  },
-
-  addUser: (params) => {
-    return dispatch => {
-      return dispatch(TurboClient.postRequest('user', params, constants.USER_CREATED))
-    }
-  },
-
-  loginUser: (credentials) => {
-    return dispatch => {
-      return dispatch(TurboClient.login(credentials, constants.CURRENT_USER_RECEIVED))
-    }
-  },
-
-  currentUser: () => {
-    return dispatch => {
-      return dispatch(TurboClient.currentUser(constants.CURRENT_USER_RECEIVED))
-    }
-  }
-
->>>>>>> beef1cdb7be8214a7eb030961e76e474c8d189d0
 }
